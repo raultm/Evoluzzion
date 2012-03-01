@@ -3,7 +3,6 @@ package com.raulete.evoluzzion.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -14,30 +13,33 @@ import android.widget.TextView;
 import com.raulete.evoluzzion.R;
 import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
 
-public class Jigsaw extends Model {
+public class Step extends Model {
 
-	public static String TABLE_NAME = "jigsaws";
+	public static String TABLE_NAME = "steps";
 	
 	public static String COL_ID = "_id";
 	public static String COL_NAME = "name";
-	public static String COL_PIECES = "pieces";
-	public static String COL_BARCODE = "barcode";
+	public static String COL_COMMENT = "comment";
+	public static String COL_DATE = "date";
+	public static String COL_JIGSAW_ID = "jigsaw_id";
 	
 	public static String getCreateSql(){
 		return "CREATE TABLE " + TABLE_NAME
 				+ " ("
 				+ COL_ID 		+ " integer primary key autoincrement, "
 				+ COL_NAME 		+ " text, "
-				+ COL_PIECES 	+ " text, "
-				+ COL_BARCODE 	+ " text "
+				+ COL_COMMENT 	+ " text, "
+				+ COL_DATE 		+ " text, "
+				+ COL_JIGSAW_ID + " integer "
 				+");";
 	}
 	
 	public String name;
-	public String pieces;
-	public String barcode;
+	public String comment;
+	public String date;
+	public long jigsaw_id;
 	
-	public Jigsaw(Context context){
+	public Step(Context context){
 		super(context);
 	}
 	
@@ -50,8 +52,9 @@ public class Jigsaw extends Model {
 		if(this._id != 0)
 			cv.put(COL_ID, this._id);
 		cv.put(COL_NAME, this.name);
-		cv.put(COL_PIECES, this.pieces);
-		cv.put(COL_BARCODE, this.barcode);
+		cv.put(COL_COMMENT, this.comment);
+		cv.put(COL_DATE, this.date);
+		cv.put(COL_JIGSAW_ID, this.jigsaw_id);
 		return cv;
 	}
 	
@@ -60,7 +63,7 @@ public class Jigsaw extends Model {
 		if (cursor.getCount() > 0){
 			cursor.moveToFirst();
 			while (!cursor.isAfterLast()){
-				DatabaseModel jigsaw = new Jigsaw(this.context);
+				DatabaseModel jigsaw = new Step(this.context);
 				jigsaw.parseCursor(cursor);
 				list.add(jigsaw);
 				cursor.moveToNext();
@@ -71,27 +74,29 @@ public class Jigsaw extends Model {
 	
 	public void parseCursor(Cursor cursor){
 		fill(
-			cursor.getLong(cursor.getColumnIndex(Jigsaw.COL_ID)), 
-			cursor.getString(cursor.getColumnIndex(Jigsaw.COL_NAME)), 
-			cursor.getString(cursor.getColumnIndex(Jigsaw.COL_PIECES)), 
-			cursor.getString(cursor.getColumnIndex(Jigsaw.COL_BARCODE))
+			cursor.getLong(cursor.getColumnIndex(Step.COL_ID)), 
+			cursor.getString(cursor.getColumnIndex(Step.COL_NAME)), 
+			cursor.getString(cursor.getColumnIndex(Step.COL_COMMENT)), 
+			cursor.getString(cursor.getColumnIndex(Step.COL_DATE)),
+			cursor.getLong(cursor.getColumnIndex(Step.COL_JIGSAW_ID))
 		);
 	}
 	
-	public void fill(long _id, String name, String pieces, String barcode){
+	public void fill(long _id, String name, String comment, String date, long jigsaw_id){
 		this._id = _id;
 		this.name = name;
-		this.pieces = pieces;
-		this.barcode = barcode;
+		this.comment = comment;
+		this.date = date;
+		this.jigsaw_id = jigsaw_id;
 	}
 	
 	public void fill(String name, String pieces, String barcode){
 		this.name = name;
-		this.pieces = pieces;
-		this.barcode = barcode;
+		this.comment = pieces;
+		this.date = barcode;
 	}
 	
-	public View populateItem(View v){
+	public void populateItemLayout(View v){
 		TextView text = (TextView)v.findViewById(R.id.jigsaw_id);
 		text.setText(this._id + "");
 		
@@ -99,21 +104,13 @@ public class Jigsaw extends Model {
 		text.setText(this.name);
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_pieces);
-		text.setText(this.pieces);
+		text.setText(this.comment);
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_barcode);
-		text.setText(this.barcode);
-		
-		return v;
-	}
-	
-	public void populateItem(Activity activity){
-		TextView text = (TextView)activity.findViewById(R.id.jigsaw_name);
-		text.setText(this.name);
+		text.setText(this.date);
 	}
 	
 	public View populateListItem(View v){
-		Log.i("Evoluzzion", "populateListItem");
 		TextView text = (TextView)v.findViewById(R.id.jigsaw_id);
 		text.setText(this._id + "");
 		
@@ -121,10 +118,10 @@ public class Jigsaw extends Model {
 		text.setText(this.name);
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_pieces);
-		text.setText(this.pieces);
+		text.setText(this.comment);
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_barcode);
-		text.setText(this.barcode);
+		text.setText(this.date);
 		return v;
 	}
 	

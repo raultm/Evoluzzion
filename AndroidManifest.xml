@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".JigsawsListActivity"></activity>
+        <activity android:name=".JigsawActivity"></activity>
     </application>
 
 </manifest>

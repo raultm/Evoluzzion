@@ -20,6 +20,7 @@ public class Model implements DatabaseModel{
 	public String TAG = "Evoluzzion";
 	Context context;
 	long id;
+	long _id;
 	DatabaseHelper mDbHelper;
 
 	public Model(){}
@@ -61,7 +62,7 @@ public class Model implements DatabaseModel{
 	}	
 
 	public long getId(){
-		return 0;
+		return this._id;
 	}
 	
 	public String getIdField(){

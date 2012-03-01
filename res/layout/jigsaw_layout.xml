@@ -5,16 +5,17 @@
     android:orientation="vertical" >
     
 	<TextView 
+	    android:id="@+id/jigsaw_name"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:text="@string/jigsawslist_title"/>
+	    android:text="@string/jigsaws_title"/>
 	<Button 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:text="@string/button_add_jigsaw"
-	    android:onClick="addJigsaw"/>
+	    android:text="@string/button_add_step"
+	    android:onClick="addStep"/>
 	<ListView 
-	    android:id="@+id/jigsaws_list"
+	    android:id="@+id/jigsaw_steps_list"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    ></ListView>

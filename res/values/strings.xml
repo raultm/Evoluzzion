@@ -2,7 +2,13 @@
 <resources>
 
     <string name="app_name">Evoluzzion</string>
-    <string name="button_enter">Entrar</string>
+    <string name="button_enter">Enter</string>
     
     <string name="jigsawslist_title">Jigsaw Puzzles</string>
+    <string name="button_add_jigsaw">Add Jigsaw Puzzle</string>
+    
+    <string name="jigsaws_title">Jigsaw Title</string>
+    <string name="button_add_step">Add Step</string>
+    
+    
 </resources>
