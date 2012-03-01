@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.raulete.evoluzzion.models.Jigsaw;
+import com.raulete.evoluzzion.models.Step;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
   
@@ -25,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 	
 	public void databaseSetup(SQLiteDatabase database){
 		database.execSQL(Jigsaw.getCreateSql());
+		database.execSQL(Step.getCreateSql());
 	}
 	
 }

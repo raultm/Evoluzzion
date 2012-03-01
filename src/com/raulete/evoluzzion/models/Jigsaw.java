@@ -109,7 +109,7 @@ public class Jigsaw extends Model {
 	
 	public void populateItem(Activity activity){
 		TextView text = (TextView)activity.findViewById(R.id.jigsaw_name);
-		text.setText(this.name);
+		text.setText(this._id + " - " + this.name);
 	}
 	
 	public View populateListItem(View v){
