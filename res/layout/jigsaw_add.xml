@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+	<EditText 
+	    android:id="@+id/jigsaw_add_name"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/jigsaw_add_name"/>
+	<EditText 
+	    android:id="@+id/jigsaw_add_pieces"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/jigsaw_add_pieces"/>
+	<EditText 
+	    android:id="@+id/jigsaw_add_barcode"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/jigsaw_add_barcode"/>
+	<Button 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/button_add_jigsaw"
+	    android:onClick="addJigsaw"/>
+	
+</LinearLayout>

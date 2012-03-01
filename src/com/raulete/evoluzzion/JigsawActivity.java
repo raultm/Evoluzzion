@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.raulete.evoluzzion.JigsawsListActivity.JigsawItemListener;
 import com.raulete.evoluzzion.models.Jigsaw;
 import com.raulete.evoluzzion.models.Step;
 import com.raulete.evoluzzion.models.adapters.LayoutArrayAdapter;

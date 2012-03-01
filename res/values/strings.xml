@@ -10,5 +10,9 @@
     <string name="jigsaws_title">Jigsaw Title</string>
     <string name="button_add_step">Add Step</string>
     
+    <string name="jigsaw_add_name">Name</string>
+    <string name="jigsaw_add_pieces">Pieces</string>
+    <string name="jigsaw_add_barcode">Barcode</string>
+    
     
 </resources>

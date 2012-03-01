@@ -1,6 +1,8 @@
 package com.raulete.evoluzzion.models;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -28,7 +30,7 @@ public class Step extends Model {
 				+ COL_ID 		+ " integer primary key autoincrement, "
 				+ COL_NAME 		+ " text, "
 				+ COL_COMMENT 	+ " text, "
-				+ COL_DATE 		+ " text, "
+				+ COL_DATE 		+ " date, "
 				+ COL_JIGSAW_ID + " integer "
 				+");";
 	}
@@ -47,12 +49,15 @@ public class Step extends Model {
 	}
 	
 	public ContentValues parse2ContentValues(){
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		Date date = new Date();
+
 		ContentValues cv = new ContentValues();
 		if(this._id != 0)
 			cv.put(COL_ID, this._id);
 		cv.put(COL_NAME, this.name);
 		cv.put(COL_COMMENT, this.comment);
-		cv.put(COL_DATE, this.date);
+		cv.put(COL_DATE, dateFormat.format(date));
 		cv.put(COL_JIGSAW_ID, this.jigsaw_id);
 		return cv;
 	}

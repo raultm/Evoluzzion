@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".JigsawsListActivity"></activity>
         <activity android:name=".JigsawActivity"></activity>
+        <activity android:name=".AddJigsawActivity"></activity>
     </application>
 
 </manifest>

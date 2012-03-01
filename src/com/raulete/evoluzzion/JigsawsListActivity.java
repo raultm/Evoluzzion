@@ -37,12 +37,7 @@ public class JigsawsListActivity extends Activity {
   	}
 	
 	public void addJigsaw(View view){
-		Jigsaw jigsaw = new Jigsaw(this);
-		jigsaw.fill("Pasacalles", "3000", "1234567890");
-		if(jigsaw.save())
-			Toast.makeText(this, "Jigsaw added", Toast.LENGTH_SHORT).show();
-		else
-			Toast.makeText(this, "Jigsaw not added", Toast.LENGTH_SHORT).show();
+		startActivity(new Intent(this, AddJigsawActivity.class));
 	}
 	
 	class JigsawItemListener implements AdapterView.OnItemClickListener{
