@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, EvoluzzionActivity!</string>
     <string name="app_name">Evoluzzion</string>
-
+    <string name="button_enter">Entrar</string>
+    
+    <string name="jigsawslist_title">Jigsaw Puzzles</string>
 </resources>
