@@ -4,6 +4,11 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     
+    <Button 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/button_launch_camera"
+	    android:onClick="launchCamera"/>
 	<EditText 
 	    android:id="@+id/step_add_name"
 	    android:layout_width="fill_parent"
@@ -19,5 +24,10 @@
 	    android:layout_height="wrap_content"
 	    android:text="@string/button_add_step"
 	    android:onClick="addStep"/>
+	<ImageView 
+	    android:id="@+id/jigsaw_image"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:contentDescription="@string/jigsaw_image"/>
 	
 </LinearLayout>

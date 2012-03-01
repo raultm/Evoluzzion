@@ -3,18 +3,19 @@
 
     <string name="app_name">Evoluzzion</string>
     <string name="button_enter">Enter</string>
+    <string name="button_add_jigsaw">Add Jigsaw Puzzle</string>
+    <string name="button_add_step">Add Step</string>
+    <string name="button_launch_camera">Launch Camera</string>
     
     <string name="jigsawslist_title">Jigsaw Puzzles</string>
-    <string name="button_add_jigsaw">Add Jigsaw Puzzle</string>
-    
     <string name="jigsaws_title">Jigsaw Title</string>
-    <string name="button_add_step">Add Step</string>
-    
     <string name="jigsaw_add_name">Name</string>
     <string name="jigsaw_add_pieces">Pieces</string>
     <string name="jigsaw_add_barcode">Barcode</string>
-    
     <string name="step_add_name">Name</string>
-    <string name="step_add_comment">Pieces</string>
+    <string name="step_add_comment">Comment</string>
+    <string name="jigsaw_image">Jigsaw Image</string>
+    
+    
     
 </resources>
