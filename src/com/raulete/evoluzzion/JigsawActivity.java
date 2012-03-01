@@ -28,12 +28,9 @@ public class JigsawActivity extends Activity {
     }
 	
 	public void addStep(View view){
-		Step step = new Step(this);
-		step.fill(0, "Step", "d’a completo", "2012-01-03 21:55:00", jigsaw_id);
-		if(step.save())
-			Toast.makeText(this, "Step added", Toast.LENGTH_SHORT).show();
-		else
-			Toast.makeText(this, "Step not added", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(this, AddStepActivity.class);
+		intent.putExtra(AddStepActivity.JIGSAW_ID, jigsaw_id);
+		startActivity(intent);
 	}
 	
 	public void populateSteps(){

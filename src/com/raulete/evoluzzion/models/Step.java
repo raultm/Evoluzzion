@@ -94,12 +94,6 @@ public class Step extends Model {
 		this.jigsaw_id = jigsaw_id;
 	}
 	
-	public void fill(String name, String pieces, String barcode){
-		this.name = name;
-		this.comment = pieces;
-		this.date = barcode;
-	}
-	
 	public void populateItemLayout(View v){
 		TextView text = (TextView)v.findViewById(R.id.jigsaw_id);
 		text.setText(this._id + "");

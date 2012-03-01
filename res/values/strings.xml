@@ -14,5 +14,7 @@
     <string name="jigsaw_add_pieces">Pieces</string>
     <string name="jigsaw_add_barcode">Barcode</string>
     
+    <string name="step_add_name">Name</string>
+    <string name="step_add_comment">Pieces</string>
     
 </resources>
