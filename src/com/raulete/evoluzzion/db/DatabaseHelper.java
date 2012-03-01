@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.raulete.evoluzzion.models.Jigsaw;
+
 public class DatabaseHelper extends SQLiteOpenHelper{
   
 	static final String DATABASE_NAME = "evoluzzion";
@@ -22,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 	}
 	
 	public void databaseSetup(SQLiteDatabase database){
-		//paramSQLiteDatabase.execSQL(Task.getCreateSQL());
+		database.execSQL(Jigsaw.getCreateSql());
 	}
 	
 }

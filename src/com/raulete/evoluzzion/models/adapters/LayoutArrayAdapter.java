@@ -38,7 +38,7 @@ public class LayoutArrayAdapter extends ArrayAdapter<DatabaseModel>{
 					.inflate(this.layoutToInflate, null);
 		DatabaseModel model = (DatabaseModel)this.items.get(index);
   	  	if (model != null){
-  	  		model.populateItem(view);
+  	  		model.populateListItem(view);
   		}
   	  	return view;
 	}

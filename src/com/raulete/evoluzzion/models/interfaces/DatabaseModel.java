@@ -27,4 +27,6 @@ public abstract interface DatabaseModel
   public abstract long getId();
   
   public abstract View populateItem(View view);
+  
+  public abstract View populateListItem(View view);
 }

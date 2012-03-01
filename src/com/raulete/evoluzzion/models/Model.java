@@ -149,5 +149,9 @@ public class Model implements DatabaseModel{
 
 	public View populateItem(View view) {
 		return null;
-	}	
+	}
+	
+	public View populateListItem(View view) {
+		return null;
+	}
 }
