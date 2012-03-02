@@ -6,12 +6,14 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.raulete.evoluzzion.models.Step;
@@ -21,6 +23,7 @@ public class AddStepActivity extends Activity {
 	public static String JIGSAW_ID = "JIGSAW_ID";
 	public static int CAMERA_RESULT = 200;
 	private long jigsaw_id;
+	private String image_uri;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,23 +59,21 @@ public class AddStepActivity extends Activity {
            u = intent.getData();
        }
 
-        if(u != null)
+        if(u != null){
         	Log.i("logMarker", "Not null " + u.toString());
-        else
+        	image_uri = u.toString();
+        }else
         	Log.i("logMarker", "null");
-//		if (request == CAMERA_RESULT) {
-//            if (result == Activity.RESULT_OK) {
-//            		Bitmap pic = (Bitmap) intent.getExtras().get("data");
-//            		if (pic != null) { 
-//            			ImageView pictureHolder = (ImageView) this.findViewById(R.id.jigsaw_image);
-//            			pictureHolder.setImageBitmap(pic);
-//            			pictureHolder.invalidate();
-//            		}
-//            }
-//            else if (result == Activity.RESULT_CANCELED) {
-//            	Toast.makeText(this, "Camera has failed", Toast.LENGTH_LONG).show();
-//            }
-//		}
+		
+        if (request == CAMERA_RESULT) {
+            if (result == Activity.RESULT_OK) {
+            		ImageView pictureHolder = (ImageView) this.findViewById(R.id.jigsaw_image);
+            		pictureHolder.setImageURI(u);
+            }
+            else if (result == Activity.RESULT_CANCELED) {
+            	Toast.makeText(this, "Camera has failed", Toast.LENGTH_LONG).show();
+            }
+		}
 	}
 	
 	public void addStep(View view){
@@ -81,12 +82,13 @@ public class AddStepActivity extends Activity {
 			0,
 			getEditTextText(R.id.step_add_name), 
 			getEditTextText(R.id.step_add_comment), 
+			image_uri,
 			"",
 			jigsaw_id
 		);
 		if(step.save()){
 			Toast.makeText(this, "Step saved", Toast.LENGTH_LONG).show();
-			openJigsawActivity();
+			finish();
 		}else
 			Toast.makeText(this, "Step could't be saved", Toast.LENGTH_LONG).show();
 	}
@@ -94,12 +96,6 @@ public class AddStepActivity extends Activity {
 	public String getEditTextText(int resId){
 		EditText et = (EditText)findViewById(resId);
 		return et.getText().toString();
-	}
-	
-	public void openJigsawActivity(){
-		Intent intent = new Intent(this, JigsawActivity.class);
-		intent.putExtra(JigsawActivity.JIGSAW_ID, jigsaw_id);
-		startActivity(intent);
 	}
 	
 	public void setJigsawId(){

@@ -22,6 +22,7 @@ public class Step extends Model {
 	public static String COL_NAME = "name";
 	public static String COL_COMMENT = "comment";
 	public static String COL_DATE = "date";
+	public static String COL_IMAGE_URI = "image_uri";
 	public static String COL_JIGSAW_ID = "jigsaw_id";
 	
 	public static String getCreateSql(){
@@ -30,6 +31,7 @@ public class Step extends Model {
 				+ COL_ID 		+ " integer primary key autoincrement, "
 				+ COL_NAME 		+ " text, "
 				+ COL_COMMENT 	+ " text, "
+				+ COL_IMAGE_URI + " text, "
 				+ COL_DATE 		+ " date, "
 				+ COL_JIGSAW_ID + " integer "
 				+");";
@@ -37,6 +39,7 @@ public class Step extends Model {
 	
 	public String name;
 	public String comment;
+	public String image_uri;
 	public String date;
 	public long jigsaw_id;
 	
@@ -57,6 +60,7 @@ public class Step extends Model {
 			cv.put(COL_ID, this._id);
 		cv.put(COL_NAME, this.name);
 		cv.put(COL_COMMENT, this.comment);
+		cv.put(COL_IMAGE_URI, this.image_uri);
 		cv.put(COL_DATE, dateFormat.format(date));
 		cv.put(COL_JIGSAW_ID, this.jigsaw_id);
 		return cv;
@@ -81,15 +85,17 @@ public class Step extends Model {
 			cursor.getLong(cursor.getColumnIndex(Step.COL_ID)), 
 			cursor.getString(cursor.getColumnIndex(Step.COL_NAME)), 
 			cursor.getString(cursor.getColumnIndex(Step.COL_COMMENT)), 
+			cursor.getString(cursor.getColumnIndex(Step.COL_IMAGE_URI)), 
 			cursor.getString(cursor.getColumnIndex(Step.COL_DATE)),
 			cursor.getLong(cursor.getColumnIndex(Step.COL_JIGSAW_ID))
 		);
 	}
 	
-	public void fill(long _id, String name, String comment, String date, long jigsaw_id){
+	public void fill(long _id, String name, String comment, String image_uri, String date, long jigsaw_id){
 		this._id = _id;
 		this.name = name;
 		this.comment = comment;
+		this.image_uri = image_uri;
 		this.date = date;
 		this.jigsaw_id = jigsaw_id;
 	}
@@ -120,6 +126,9 @@ public class Step extends Model {
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_barcode);
 		text.setText(this.date);
+		
+		text = (TextView)v.findViewById(R.id.jigsaw_image_uri);
+		text.setText(this.image_uri);
 		return v;
 	}
 	

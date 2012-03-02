@@ -22,9 +22,13 @@ public class JigsawActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jigsaw_layout);
         setJigsawId();
-        populateJigsaw();
-        populateSteps();
     }
+	
+	public void onResume(){
+		super.onResume();
+		populateJigsaw();
+        populateSteps();
+	}
 	
 	public void addStep(View view){
 		Intent intent = new Intent(this, AddStepActivity.class);

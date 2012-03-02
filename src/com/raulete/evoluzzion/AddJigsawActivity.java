@@ -25,7 +25,7 @@ public class AddJigsawActivity extends Activity {
 		);
 		if(jigsaw.save()){
 			Toast.makeText(this, "Jigsaw saved", Toast.LENGTH_LONG).show();
-			openJigsawsListActivity();
+			finish();
 		}else
 			Toast.makeText(this, "Jigsaw could't be saved", Toast.LENGTH_LONG).show();
 	}
@@ -35,7 +35,4 @@ public class AddJigsawActivity extends Activity {
 		return et.getText().toString();
 	}
 	
-	public void openJigsawsListActivity(){
-		startActivity(new Intent(this, JigsawsListActivity.class));
-	}
 }

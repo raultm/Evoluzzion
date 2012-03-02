@@ -19,8 +19,12 @@ public class JigsawsListActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.jigsaws_list);
-        populateJigsaws();
     }
+	
+	public void onResume(){
+		super.onResume();
+		populateJigsaws();
+	}
 	
 	public void populateJigsaws(){
 		ListView jigsaws =  (ListView)findViewById(R.id.jigsaws_list); 
