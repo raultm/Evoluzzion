@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.raulete.evoluzzion.R;
@@ -132,6 +135,15 @@ public class Step extends Model {
 		return v;
 	}
 	
-	
+	public void populateItem(Activity activity){
+		TextView text = (TextView)activity.findViewById(R.id.step_name);
+		text.setText(this.name);
+		
+		text = (TextView)activity.findViewById(R.id.step_comment);
+		text.setText(this.comment);
+		
+		ImageView image = (ImageView)activity.findViewById(R.id.step_image);
+		image.setImageURI(Uri.parse(this.image_uri));
+	}
 	
 }

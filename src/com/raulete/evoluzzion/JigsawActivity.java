@@ -3,9 +3,11 @@ package com.raulete.evoluzzion;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.raulete.evoluzzion.models.Jigsaw;
@@ -42,7 +44,7 @@ public class JigsawActivity extends Activity {
 				this, 
 				R.layout.jigsaw_layout_step_list_item, 
 				getSteps()));
-		//jigsaws.setOnItemClickListener(new JigsawItemListener(this));
+		steps.setOnItemClickListener(new StepItemListener(this));
 	}
 	
 	private List<DatabaseModel> getSteps(){
@@ -62,4 +64,24 @@ public class JigsawActivity extends Activity {
 		jigsaw.read(jigsaw_id);
 		jigsaw.populateItem(this);
 	}
+	
+	class StepItemListener implements AdapterView.OnItemClickListener{
+		
+		private Context context;
+		
+		public StepItemListener(Context context){
+			super();
+			this.context = context; 
+		}
+		
+  		public void onItemClick(
+  				AdapterView<?> paramAdapterView, 
+  				View paramView, 
+  				int position, 
+  				long id){
+  			Intent intent = new Intent(context, StepActivity.class);
+  			intent.putExtra(StepActivity.STEP_ID, id);
+  			startActivity(intent);
+  		}
+  	}
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+	<TextView 
+	    android:id="@+id/jigsaw_name"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/jigsaws_title"/>
+	
+	<TextView 
+	    android:id="@+id/step_name"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/step_add_name"/>
+	<TextView 
+	    android:id="@+id/step_comment"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/step_add_comment"/>
+	<ImageView 
+	    android:id="@+id/step_image"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/ic_launcher"
+	    android:contentDescription="@string/jigsaw_image"/>
+	
+</LinearLayout>

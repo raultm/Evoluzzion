@@ -21,6 +21,7 @@
         <activity android:name=".JigsawActivity"></activity>
         <activity android:name=".AddJigsawActivity"></activity>
         <activity android:name=".AddStepActivity"></activity>
+        <activity android:name=".StepActivity"></activity>
     </application>
 
 </manifest>
