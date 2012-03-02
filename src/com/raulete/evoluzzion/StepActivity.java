@@ -22,6 +22,11 @@ public class StepActivity extends Activity {
 		populateStep();
 	}
 	
+	public void onPause(){
+		super.onPause();
+		finish();
+	}
+	
 	public void populateStep(){
 		Step step = new Step(this);
 		step.read(step_id);

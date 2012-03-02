@@ -136,7 +136,12 @@ public class Step extends Model {
 	}
 	
 	public void populateItem(Activity activity){
-		TextView text = (TextView)activity.findViewById(R.id.step_name);
+		TextView text = (TextView)activity.findViewById(R.id.jigsaw_name);
+		Jigsaw jigsaw = new Jigsaw(context);
+		jigsaw.read(this.jigsaw_id);
+		text.setText(jigsaw.name);
+		
+		text = (TextView)activity.findViewById(R.id.step_name);
 		text.setText(this.name);
 		
 		text = (TextView)activity.findViewById(R.id.step_comment);
@@ -144,6 +149,7 @@ public class Step extends Model {
 		
 		ImageView image = (ImageView)activity.findViewById(R.id.step_image);
 		image.setImageURI(Uri.parse(this.image_uri));
+		image.invalidate();
 	}
 	
 }
