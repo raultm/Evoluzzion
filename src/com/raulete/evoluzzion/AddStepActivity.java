@@ -2,8 +2,6 @@ package com.raulete.evoluzzion;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.net.URI;
-import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,7 +12,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.raulete.evoluzzion.models.Step;
