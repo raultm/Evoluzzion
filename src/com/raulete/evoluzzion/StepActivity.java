@@ -30,13 +30,18 @@ public class StepActivity extends Activity {
 	public void shareStep(View view){
 		Intent sharingIntent = new Intent(Intent.ACTION_SEND);
 		sharingIntent.setType("image/jpeg");
-		sharingIntent.putExtra(Intent.EXTRA_STREAM, getStringToShare());
+		sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getStringToShare());
 		sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(step.image_uri));  
-		startActivity(Intent.createChooser(sharingIntent,"Comparte"));
+		startActivity(Intent.createChooser(sharingIntent,"Share"));
 	}
 	
 	public String getStringToShare(){
-		String share = jigsaw.name + " - " + step.name + " - " + step.comment;
+		String share = "";
+		if(step.comment.equals("")){
+			share = jigsaw.name + " - " + step.name + ". #Evoluzzion";
+		}else{
+			share = jigsaw.name + " - " + step.name + ". " + step.comment + " #Evoluzzion";
+		}
 		return share;
 	}
 	
