@@ -94,17 +94,4 @@ public class AddStepActivity extends Activity {
 		Intent intent = getIntent();
 		jigsaw_id = intent.getLongExtra(JIGSAW_ID, 0);
 	}
-	
-	public boolean hasImageCaptureBug() {
-		return true;
-//		ArrayList<String> devices = new ArrayList<String>();
-//	    	devices.add("android-devphone1/dream_devphone/dream");
-//	    	devices.add("generic/sdk/generic");
-//	    	devices.add("vodafone/vfpioneer/sapphire");
-//	    	devices.add("tmobile/kila/dream");
-//	    	devices.add("verizon/voles/sholes");
-//	    	devices.add("google_ion/google_ion/sapphire");
-//	    return devices.contains(android.os.Build.BRAND + "/" + android.os.Build.PRODUCT + "/" + android.os.Build.DEVICE);
-	}
-
 }
