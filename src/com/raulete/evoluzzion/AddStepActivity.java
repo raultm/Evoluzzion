@@ -32,12 +32,7 @@ public class AddStepActivity extends Activity {
 	
 	public void launchCamera(View view){
 		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		if (hasImageCaptureBug()) {
-			camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
-		} else {
-			camera_uri = android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-		}
-		Log.i("Evoluzzion", camera_uri.toString());
+		camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
 		camera.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, camera_uri);
 		startActivityForResult(camera, CAMERA_RESULT);
 	}
@@ -46,22 +41,28 @@ public class AddStepActivity extends Activity {
 	protected void onActivityResult(int request, int result, Intent intent){
 		if (request == CAMERA_RESULT) {
             if (result == Activity.RESULT_OK) {
-            	Uri uri = null;
-            	File file = new File(Environment.getExternalStorageDirectory() + "/evoluzzion/");
-            	 try {
-            		 uri = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), null, null));
-                     if (!file.delete()) {	Log.i("logMarker", "Failed to delete " + file); }
-                 } catch (FileNotFoundException e) { 
-                	 e.printStackTrace(); 
-                 }
-                 if(uri != null){
-                 	image_uri = uri.toString();
-                 }
+            	image_uri = getStringUriFromCameraResult();
             } else if (result == Activity.RESULT_CANCELED) {
             	Toast.makeText(this, "Camera has failed", Toast.LENGTH_LONG).show();
             }
 		}
 	}
+	
+	private String getStringUriFromCameraResult(){
+		Uri uri = null;
+    	File file = new File(Environment.getExternalStorageDirectory() + "/evoluzzion/");
+    	 try {
+    		 uri = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), null, null));
+             if (!file.delete()) {	Log.i("logMarker", "Failed to delete " + file); }
+         } catch (FileNotFoundException e) { 
+        	 e.printStackTrace(); 
+         }
+         if(uri != null){
+         	 return  uri.toString();
+         }
+         return null;
+    }
+	
 	
 	public void addStep(View view){
 		Step step = new Step(this);
