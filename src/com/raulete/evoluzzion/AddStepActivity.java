@@ -51,16 +51,16 @@ public class AddStepActivity extends Activity {
 	private String getStringUriFromCameraResult(){
 		Uri uri = null;
     	File file = new File(Environment.getExternalStorageDirectory() + "/evoluzzion/");
-    	 try {
-    		 uri = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), null, null));
-             if (!file.delete()) {	Log.i("logMarker", "Failed to delete " + file); }
-         } catch (FileNotFoundException e) { 
-        	 e.printStackTrace(); 
-         }
-         if(uri != null){
-         	 return  uri.toString();
-         }
-         return null;
+    	try {
+    		uri = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), null, null));
+            if (!file.delete()) {	Log.i("logMarker", "Failed to delete " + file); }
+        } catch (FileNotFoundException e) { 
+        	e.printStackTrace(); 
+        }
+        if(uri != null){
+        	return  uri.toString();
+        }
+        return null;
     }
 	
 	
