@@ -44,38 +44,20 @@ public class AddStepActivity extends Activity {
 	
 	@Override
 	protected void onActivityResult(int request, int result, Intent intent){
-		
-		Uri u = null;
-        if (hasImageCaptureBug()) {
-        	Log.i("Evoluzzion", "hasBug");
-            File fi = new File(Environment.getExternalStorageDirectory() + "/evoluzzion/");
-            try {
-                u = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(getContentResolver(), fi.getAbsolutePath(), null, null));
-                if (!fi.delete()) {
-                    Log.i("logMarker", "Failed to delete " + fi);
-                }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        } else {
-        	Log.i("Evoluzzion", "no Bug");
-        	u = intent.getData();
-        	Log.i("Evoluzzion", "");
-        }
-
-        if(u != null){
-        	Log.i("Evoluzzion", "Not null " + u.toString());
-        	image_uri = u.toString();
-        }else
-        	Log.i("Evoluzzion", "null");
-		
-        if (request == CAMERA_RESULT) {
+		if (request == CAMERA_RESULT) {
             if (result == Activity.RESULT_OK) {
-            		//ImageView pictureHolder = (ImageView) this.findViewById(R.id.jigsaw_image);
-            		//pictureHolder.setImageURI(u);
-            		//pictureHolder.invalidate();
-            }
-            else if (result == Activity.RESULT_CANCELED) {
+            	Uri uri = null;
+            	File file = new File(Environment.getExternalStorageDirectory() + "/evoluzzion/");
+            	 try {
+            		 uri = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), null, null));
+                     if (!file.delete()) {	Log.i("logMarker", "Failed to delete " + file); }
+                 } catch (FileNotFoundException e) { 
+                	 e.printStackTrace(); 
+                 }
+                 if(uri != null){
+                 	image_uri = uri.toString();
+                 }
+            } else if (result == Activity.RESULT_CANCELED) {
             	Toast.makeText(this, "Camera has failed", Toast.LENGTH_LONG).show();
             }
 		}
@@ -83,6 +65,10 @@ public class AddStepActivity extends Activity {
 	
 	public void addStep(View view){
 		Step step = new Step(this);
+		if(image_uri == null || image_uri.equals("")){ 
+			Toast.makeText(this, "Please, take a photo!", Toast.LENGTH_LONG).show();
+			return; 
+		}
 		step.fill(
 			0,
 			getEditTextText(R.id.step_add_name), 
