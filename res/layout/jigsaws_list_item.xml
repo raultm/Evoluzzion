@@ -7,18 +7,22 @@
     <TextView 
         android:id="@+id/jigsaw_id"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="#222222"/>
     <TextView 
         android:id="@+id/jigsaw_name"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="#222222"/>
     <TextView 
         android:id="@+id/jigsaw_pieces"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="#222222"/>
     <TextView 
         android:id="@+id/jigsaw_barcode"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:textColor="#222222"/>
 
 </LinearLayout>

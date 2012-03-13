@@ -2,13 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@drawable/main_background"
+    android:gravity="center" >
     
+    <ImageView 
+	    android:layout_gravity="left"
+	    android:layout_width="100dip"
+	    android:layout_height="50dip"
+	    android:layout_marginLeft="10dip"
+	    android:src="@drawable/evoluzzion_logo_800"
+	    android:contentDescription="@string/jigsawslist_title"
+	    />
 	<Button
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="@string/button_step_share"
-	    android:onClick="shareStep" />
+	    android:onClick="shareStep" 
+	    android:background="@drawable/button_pink"
+	    android:textColor="#CCCCCC"
+	    android:textSize="20sp"
+	    android:layout_marginLeft="15dip"
+	    android:layout_marginRight="15dip"
+	    android:paddingBottom="10dip"
+	    android:paddingTop="10dip"/>
 	<TextView 
 	    android:id="@+id/jigsaw_name"
 	    android:layout_width="fill_parent"
