@@ -9,7 +9,10 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -104,10 +107,7 @@ public class Step extends Model {
 	}
 	
 	public void populateItemLayout(View v){
-		TextView text = (TextView)v.findViewById(R.id.jigsaw_id);
-		text.setText(this._id + "");
-		
-		text = (TextView)v.findViewById(R.id.jigsaw_name);
+		TextView text = (TextView)v.findViewById(R.id.jigsaw_name);
 		text.setText(this.name);
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_pieces);
@@ -118,10 +118,7 @@ public class Step extends Model {
 	}
 	
 	public View populateListItem(View v){
-		TextView text = (TextView)v.findViewById(R.id.jigsaw_id);
-		text.setText(this._id + "");
-		
-		text = (TextView)v.findViewById(R.id.jigsaw_name);
+		TextView text = (TextView)v.findViewById(R.id.jigsaw_name);
 		text.setText(this.name);
 		
 		text = (TextView)v.findViewById(R.id.jigsaw_pieces);
@@ -130,8 +127,11 @@ public class Step extends Model {
 		text = (TextView)v.findViewById(R.id.jigsaw_barcode);
 		text.setText(this.date);
 		
-		text = (TextView)v.findViewById(R.id.jigsaw_image_uri);
-		text.setText(this.image_uri);
+		ImageView iv = (ImageView)v.findViewById(R.id.step_image);
+		if(this.image_uri.equals(""))
+			iv.setBackgroundResource(R.drawable.main_background_image);
+		else
+			iv.setImageBitmap(getScaledImageFromUri(Uri.parse(this.image_uri)));
 		return v;
 	}
 	
@@ -148,8 +148,24 @@ public class Step extends Model {
 		text.setText(this.comment);
 		
 		ImageView image = (ImageView)activity.findViewById(R.id.step_image);
-		image.setImageURI(Uri.parse(this.image_uri));
-		image.invalidate();
+		image.setImageBitmap(getScaledImageFromUri(Uri.parse(this.image_uri)));
+	}
+
+	private Bitmap getScaledImageFromUri(Uri uri){
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		//options.inTempStorage = new byte[16*512];
+		options.inSampleSize = 8;
+
+		
+		Bitmap bitmapImage = BitmapFactory.decodeFile(getRealPathFromURI(uri), options);
+		return bitmapImage;
 	}
 	
+	public String getRealPathFromURI(Uri contentUri) {
+        String[] proj = { MediaStore.Images.Media.DATA };
+        Cursor cursor = ((Activity)context).managedQuery(contentUri, proj, null, null, null);
+        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+        cursor.moveToFirst();
+        return cursor.getString(column_index);
+    }
 }
