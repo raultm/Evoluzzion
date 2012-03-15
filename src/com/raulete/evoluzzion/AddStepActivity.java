@@ -19,7 +19,6 @@ public class AddStepActivity extends Activity {
 	public static String JIGSAW_ID = "JIGSAW_ID";
 	private long jigsaw_id;
 	private String image_uri;
-	private Uri camera_uri;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +27,7 @@ public class AddStepActivity extends Activity {
     }
 	
 	public void launchCamera(View view){
-		camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
+		Uri camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
 		RCameraUtil.launchCamera(this, camera_uri);
 	}
 	

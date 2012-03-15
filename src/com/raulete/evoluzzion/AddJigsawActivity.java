@@ -17,7 +17,6 @@ import com.raulete.utils.camera.RCameraUtil;
 public class AddJigsawActivity extends Activity {
 
 	private String image_uri;
-	private Uri camera_uri;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +29,7 @@ public class AddJigsawActivity extends Activity {
 	}
 	
 	public void launchCamera(View view){
-		camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
+		Uri camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
 		RCameraUtil.launchCamera(this, camera_uri);
 	}
 	
