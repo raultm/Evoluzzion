@@ -9,6 +9,7 @@
     <string name="button_step_share">Share</string>
     <string name="logo_content_description">Evoluzzion</string>
     
+    <string name="jigsaws">Jigsaws</string>
     <string name="jigsawslist_title">Jigsaw Puzzles</string>
     <string name="jigsaws_title">Jigsaw Title</string>
     <string name="jigsaw_add_name">Name</string>
@@ -24,6 +25,8 @@
     <string name="step_take_a_photo">Please, take a photo!</string>
     <string name="step_save">Step saved</string>
     <string name="step_not_saved">Step could\'t be saved</string>
+    
+    <string name="divider">Divider</string>
     
     
     

@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
-    android:background="@drawable/main_background"
+    android:background="@drawable/list_background"
     android:gravity="center" >
     
 	<ImageView 
@@ -21,15 +21,40 @@
 	    android:onClick="addJigsaw"
 	    android:background="@drawable/button_pink"
 	    android:textSize="20sp"
-	    android:textColor="#CCCCCC"
+	    android:textColor="#FFFFFF"
 	    android:layout_marginLeft="15dip"
 	    android:layout_marginRight="15dip"
 	    android:paddingBottom="10dip"
 	    android:paddingTop="10dip" />
+	<TextView 
+	    android:gravity="center"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:singleLine="true"
+	    android:textColor="#dd3673"
+	    android:layout_marginBottom="4dip"
+	    android:text="@string/jigsaws"
+	    />
+	<TextView 
+	    android:gravity="center"
+	    android:layout_width="80dip"
+	    android:layout_height="3dip"
+	    android:singleLine="true"
+	    android:background="#dd3673"
+	    android:text="@string/jigsaws"
+	    />
+	<TextView 
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dip"
+	    android:background="#dd3673"
+	    android:layout_marginBottom="4dip"
+	    />
 	<ListView 
 	    android:id="@+id/jigsaws_list"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
+	    android:dividerHeight="0dip"
+	    android:divider="#FFFFFFFF"
 	    android:cacheColorHint="#00000000"
 	    ></ListView>
 </LinearLayout>
