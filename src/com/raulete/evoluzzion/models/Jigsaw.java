@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -122,7 +121,6 @@ public class Jigsaw extends Model {
 	}
 	
 	public View populateListItem(View v){
-		Log.i("Evoluzzion", "populateListItem");
 		TextView text = (TextView)v.findViewById(R.id.jigsaw_name);
 		text.setText(this.name);
 		
