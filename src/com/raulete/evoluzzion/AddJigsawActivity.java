@@ -16,7 +16,6 @@ import com.raulete.utils.camera.RCameraUtil;
 
 public class AddJigsawActivity extends Activity {
 
-	public static int CAMERA_RESULT = 200;
 	private String image_uri;
 	private Uri camera_uri;
 	
@@ -25,6 +24,21 @@ public class AddJigsawActivity extends Activity {
         setContentView(R.layout.jigsaw_add);
     }
 	
+	public String getEditTextText(int resId){
+		EditText et = (EditText)findViewById(resId);
+		return et.getText().toString();
+	}
+	
+	public void launchCamera(View view){
+		camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
+		RCameraUtil.launchCamera(this, camera_uri);
+	}
+	
+	@Override
+	protected void onActivityResult(int request, int result, Intent intent){
+		image_uri = RCameraUtil.getUriFromCameraResult(this, request, result, intent);
+	}
+
 	public void addJigsaw(View view){
 		if(image_uri == null || image_uri.equals("")){ 
 			image_uri = ""; 
@@ -42,21 +56,4 @@ public class AddJigsawActivity extends Activity {
 		}else
 			Toast.makeText(this, "Jigsaw could't be saved", Toast.LENGTH_LONG).show();
 	}
-	
-	public String getEditTextText(int resId){
-		EditText et = (EditText)findViewById(resId);
-		return et.getText().toString();
-	}
-	
-	public void launchCamera(View view){
-		camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
-		RCameraUtil.launchCamera(this, camera_uri);
-	}
-	
-	@Override
-	protected void onActivityResult(int request, int result, Intent intent){
-		image_uri = RCameraUtil.getUriFromCameraResult(this, request, result, intent);
-	}
-
-	
 }

@@ -17,7 +17,6 @@ import com.raulete.utils.camera.RCameraUtil;
 public class AddStepActivity extends Activity {
 
 	public static String JIGSAW_ID = "JIGSAW_ID";
-	public static int CAMERA_RESULT = 200;
 	private long jigsaw_id;
 	private String image_uri;
 	private Uri camera_uri;
@@ -36,6 +35,16 @@ public class AddStepActivity extends Activity {
 	@Override
 	protected void onActivityResult(int request, int result, Intent intent){
 		image_uri = RCameraUtil.getUriFromCameraResult(this, request, result, intent);
+	}
+	
+	public String getEditTextText(int resId){
+		EditText et = (EditText)findViewById(resId);
+		return et.getText().toString();
+	}
+	
+	public void setJigsawId(){
+		Intent intent = getIntent();
+		jigsaw_id = intent.getLongExtra(JIGSAW_ID, 0);
 	}
 	
 	public void addStep(View view){
@@ -57,15 +66,5 @@ public class AddStepActivity extends Activity {
 			finish();
 		}else
 			Toast.makeText(this, "Step could't be saved", Toast.LENGTH_LONG).show();
-	}
-	
-	public String getEditTextText(int resId){
-		EditText et = (EditText)findViewById(resId);
-		return et.getText().toString();
-	}
-	
-	public void setJigsawId(){
-		Intent intent = getIntent();
-		jigsaw_id = intent.getLongExtra(JIGSAW_ID, 0);
 	}
 }
