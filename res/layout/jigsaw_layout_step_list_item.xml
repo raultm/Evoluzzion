@@ -15,25 +15,25 @@
 	    android:layout_height="fill_parent"
 	    android:orientation="vertical"
 	    android:paddingLeft="10dip"
-	    android:background="#DDDDDD"
+	    android:background="@color/background_box_color"
 	    android:layout_margin="4dip"
 	    android:layout_marginLeft="0dip" >
 	    <TextView 
 	        android:id="@+id/jigsaw_name"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="#666666"
+	        android:textColor="@color/inner_list_font_color"
 	        android:textSize="18sp"/>
 	    <TextView 
 	        android:id="@+id/jigsaw_pieces"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="#666666"/>
+	        android:textColor="@color/inner_list_font_color"/>
 	    <TextView 
 	        android:id="@+id/jigsaw_barcode"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="#666666"
+	        android:textColor="@color/inner_list_font_color"
 	        android:gravity="center"/>
 	</LinearLayout>
 </LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    
+    <!-- Fonts -->
+    <color name="button_font_color">#FFFFFF</color>
+    <color name="inner_list_font_color">#666666</color>
+    <!-- Main colors -->
+    <color name="main_color_1">#DD3673</color>
+    <color name="main_color_2">#B30343</color>
+    <!-- Background colors -->
+    <color name="background_color_1">#DD3673</color>
+    <color name="background_box_color">#CCCCCC</color>
+</resources>
