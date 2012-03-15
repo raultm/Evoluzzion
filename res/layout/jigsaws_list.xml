@@ -33,8 +33,7 @@
 	    android:singleLine="true"
 	    android:textColor="#dd3673"
 	    android:layout_marginBottom="4dip"
-	    android:text="@string/jigsaws"
-	    />
+	    android:text="@string/jigsaws" />
 	<TextView 
 	    android:gravity="center"
 	    android:layout_width="80dip"

@@ -3,41 +3,58 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@drawable/main_background"
-    android:gravity="center" >
+    android:background="@drawable/list_background"
+    android:gravity="center|top" >
     
+    <ImageView 
+	    android:layout_gravity="left"
+	    android:layout_width="100dip"
+	    android:layout_height="50dip"
+	    android:layout_marginLeft="10dip"
+	    android:src="@drawable/evoluzzion_logo_800"
+	    android:contentDescription="@string/jigsawslist_title" />
 	<Button 
-	    android:layout_width="wrap_content"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="@string/button_launch_camera"
 	    android:onClick="launchCamera"
 	    android:background="@drawable/button_pink"
-	    android:textColor="#CCCCCC"
 	    android:textSize="20sp"
-	    android:padding="10dip"/>
+	    android:textColor="#FFFFFF"
+	    android:layout_marginLeft="15dip"
+	    android:layout_marginRight="15dip"
+	    android:paddingBottom="10dip"
+	    android:paddingTop="10dip" />
 	<EditText 
 	    android:id="@+id/jigsaw_add_name"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:hint="@string/jigsaw_add_name"/>
+	    android:hint="@string/jigsaw_add_name"
+	    android:layout_margin="15dip" />
 	<EditText 
 	    android:id="@+id/jigsaw_add_pieces"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:hint="@string/jigsaw_add_pieces"/>
+	    android:hint="@string/jigsaw_add_pieces"
+	    android:layout_margin="15dip" />
 	<EditText 
 	    android:id="@+id/jigsaw_add_barcode"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
-	    android:hint="@string/jigsaw_add_barcode"/>
+	    android:hint="@string/jigsaw_add_barcode"
+	    android:layout_margin="15dip" />
 	<Button 
-	    android:layout_width="wrap_content"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:text="@string/button_add_jigsaw"
 	    android:onClick="addJigsaw"
 	    android:background="@drawable/button_pink"
-	    android:textColor="#CCCCCC"
 	    android:textSize="20sp"
-	    android:padding="10dip"/>
+	    android:textColor="#FFFFFF"
+	    android:layout_marginLeft="15dip"
+	    android:layout_marginRight="15dip"
+	    android:paddingBottom="10dip"
+	    android:paddingTop="10dip" />
+	
 	
 </LinearLayout>

@@ -9,8 +9,7 @@
         android:layout_height="150dip"
         android:contentDescription="@string/jigsaw_image"
         android:scaleType="centerCrop"
-        android:layout_margin="4dip"
-        />
+        android:layout_margin="4dip" />
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
@@ -23,17 +22,18 @@
 	        android:id="@+id/jigsaw_name"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="#222222"
-	        android:textSize="25sp"/>
+	        android:textColor="#666666"
+	        android:textSize="18sp"/>
 	    <TextView 
 	        android:id="@+id/jigsaw_pieces"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="#222222"/>
+	        android:textColor="#666666"/>
 	    <TextView 
 	        android:id="@+id/jigsaw_barcode"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="#222222"/>
+	        android:textColor="#666666"
+	        android:gravity="center"/>
 	</LinearLayout>
 </LinearLayout>
