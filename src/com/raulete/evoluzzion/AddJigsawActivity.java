@@ -50,9 +50,9 @@ public class AddJigsawActivity extends Activity {
 			image_uri
 		);
 		if(jigsaw.save()){
-			Toast.makeText(this, "Jigsaw saved", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.jigsaw_saved, Toast.LENGTH_LONG).show();
 			finish();
 		}else
-			Toast.makeText(this, "Jigsaw could't be saved", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.jigsaw_not_saved, Toast.LENGTH_LONG).show();
 	}
 }

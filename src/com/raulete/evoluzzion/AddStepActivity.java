@@ -49,7 +49,7 @@ public class AddStepActivity extends Activity {
 	public void addStep(View view){
 		Step step = new Step(this);
 		if(image_uri == null || image_uri.equals("")){ 
-			Toast.makeText(this, "Please, take a photo!", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.step_take_a_photo, Toast.LENGTH_LONG).show();
 			return; 
 		}
 		step.fill(
@@ -61,9 +61,9 @@ public class AddStepActivity extends Activity {
 			jigsaw_id
 		);
 		if(step.save()){
-			Toast.makeText(this, "Step saved", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.step_save, Toast.LENGTH_LONG).show();
 			finish();
 		}else
-			Toast.makeText(this, "Step could't be saved", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.step_not_saved, Toast.LENGTH_LONG).show();
 	}
 }
