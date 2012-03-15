@@ -116,8 +116,8 @@ public class Jigsaw extends Model {
 	}
 	
 	public void populateItem(Activity activity){
-		TextView text = (TextView)activity.findViewById(R.id.jigsaw_name);
-		text.setText(this.name);
+		//TextView text = (TextView)activity.findViewById(R.id.jigsaw_name);
+		//text.setText(this.name);
 	}
 	
 	public View populateListItem(View v){

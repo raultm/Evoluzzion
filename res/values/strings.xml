@@ -22,6 +22,7 @@
     <string name="jigsaw_saved">Jigsaw saved</string>
     <string name="jigsaw_not_saved">Jigsaw could\'t be saved</string>
     
+    <string name="steps">Steps</string>
     <string name="step_take_a_photo">Please, take a photo!</string>
     <string name="step_save">Step saved</string>
     <string name="step_not_saved">Step could\'t be saved</string>
