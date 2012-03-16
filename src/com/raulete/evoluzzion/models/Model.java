@@ -61,6 +61,17 @@ public class Model implements DatabaseModel{
 		return find("SELECT * FROM " + getTableName());
 	}	
 
+	public boolean delete(long id){
+		this.mDbHelper = new DatabaseHelper(this.context);
+		String deleteQuery = getTableName() + "._id = " + id;
+		try{
+			this.mDbHelper.getWritableDatabase().delete(getTableName(), deleteQuery, null);
+		} finally {
+			this.mDbHelper.close();
+		}
+		return true;
+	}
+	
 	public long getId(){
 		return this._id;
 	}

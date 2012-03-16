@@ -24,6 +24,8 @@ public abstract interface DatabaseModel
 
   public abstract boolean save();
   
+  public abstract boolean delete(long id);
+  
   public abstract long getId();
   
   public abstract View populateItem(View view);

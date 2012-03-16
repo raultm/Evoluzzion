@@ -31,5 +31,7 @@
     
     <string name="camera_image">Camera Image</string>
     
+    <string name="delete">Delete</string>
+    
     
 </resources>
