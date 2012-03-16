@@ -64,7 +64,7 @@ public class Model implements DatabaseModel{
 	public boolean delete(long id){
 		this.mDbHelper = new DatabaseHelper(this.context);
 		String deleteQuery = getTableName() + "._id = ?";
-		String values[] = {id + ""};
+		String[] values = {Long.toString(id)};
 		try{
 			this.mDbHelper.getWritableDatabase().delete(getTableName(), deleteQuery, values);
 		} finally {
