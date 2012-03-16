@@ -78,6 +78,9 @@ public class JigsawActivity extends Activity {
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+        case R.id.menu_jigsaw_edit:
+        	openEditJigsawActivity();
+        	return true;
         case R.id.menu_jigsaw_delete:
         	new Jigsaw(this).delete(jigsaw_id);
         	finish();
@@ -86,6 +89,12 @@ public class JigsawActivity extends Activity {
             return super.onOptionsItemSelected(item);
         }
     }
+	
+	public void openEditJigsawActivity(){
+		Intent intent = new Intent(this, EditJigsawActivity.class);
+		intent.putExtra(EditJigsawActivity.JIGSAW_ID, jigsaw_id);
+		startActivity(intent);
+	}
 	
 	class StepItemListener implements AdapterView.OnItemClickListener{
 		

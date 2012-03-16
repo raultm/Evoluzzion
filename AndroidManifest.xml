@@ -21,6 +21,7 @@
         <activity android:name=".JigsawsListActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".JigsawActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".AddJigsawActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".EditJigsawActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".AddStepActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".StepActivity" android:screenOrientation="portrait"></activity>
     </application>
