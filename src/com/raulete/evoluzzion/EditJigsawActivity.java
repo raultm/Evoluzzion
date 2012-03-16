@@ -4,20 +4,17 @@ import java.io.File;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.raulete.evoluzzion.models.Jigsaw;
-import com.raulete.utils.camera.RCameraUtil;
+import com.raulete.utils.RCameraUtil;
+import com.raulete.utils.RImageUtil;
 
 public class EditJigsawActivity extends Activity {
 
@@ -73,21 +70,6 @@ public class EditJigsawActivity extends Activity {
 			Toast.makeText(this, R.string.jigsaw_not_saved, Toast.LENGTH_LONG).show();
 	}
 	
-	private Bitmap getScaledImageFromUri(Uri uri){
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inSampleSize = 3;
-		Bitmap bitmapImage = BitmapFactory.decodeFile(getRealPathFromURI(uri), options);
-		return bitmapImage;
-	}
-	
-	public String getRealPathFromURI(Uri contentUri) {
-        String[] proj = { MediaStore.Images.Media.DATA };
-        Cursor cursor = managedQuery(contentUri, proj, null, null, null);
-        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        cursor.moveToFirst();
-        return cursor.getString(column_index);
-    }
-	
 	public void setJigsaw(){
 		Intent intent = getIntent();
 		jigsaw_id = intent.getLongExtra(JIGSAW_ID, 0);
@@ -106,7 +88,7 @@ public class EditJigsawActivity extends Activity {
 	public void setPreviewImage(String uri){
 		if(image_uri != null && !image_uri.equals("")){
 			ImageView image = (ImageView)findViewById(R.id.camera_image);
-			image.setImageBitmap(getScaledImageFromUri(Uri.parse(this.image_uri)));
+			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri)));
 		}
 	}
 }

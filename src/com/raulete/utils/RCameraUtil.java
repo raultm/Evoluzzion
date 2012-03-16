@@ -1,4 +1,4 @@
-package com.raulete.utils.camera;
+package com.raulete.utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
