@@ -153,10 +153,7 @@ public class Step extends Model {
 
 	private Bitmap getScaledImageFromUri(Uri uri){
 		BitmapFactory.Options options = new BitmapFactory.Options();
-		//options.inTempStorage = new byte[16*512];
 		options.inSampleSize = 8;
-
-		
 		Bitmap bitmapImage = BitmapFactory.decodeFile(getRealPathFromURI(uri), options);
 		return bitmapImage;
 	}
