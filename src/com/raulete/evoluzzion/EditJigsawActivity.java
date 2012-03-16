@@ -88,7 +88,7 @@ public class EditJigsawActivity extends Activity {
 	public void setPreviewImage(String uri){
 		if(image_uri != null && !image_uri.equals("")){
 			ImageView image = (ImageView)findViewById(R.id.camera_image);
-			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri)));
+			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri), 5));
 		}
 	}
 }

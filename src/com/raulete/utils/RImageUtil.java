@@ -9,7 +9,7 @@ import android.provider.MediaStore;
 
 public class RImageUtil {
 
-	public static Bitmap getScaledImageFromUri(Activity activity, Uri uri){
+	public static Bitmap getScaledImageFromUri(Activity activity, Uri uri, int size){
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 3;
 		Bitmap bitmapImage = BitmapFactory.decodeFile(getRealPathFromURI(activity, uri), options);

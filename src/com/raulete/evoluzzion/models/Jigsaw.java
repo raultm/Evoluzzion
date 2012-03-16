@@ -7,16 +7,14 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.raulete.evoluzzion.R;
 import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.utils.RImageUtil;
 
 public class Jigsaw extends Model {
 
@@ -134,23 +132,7 @@ public class Jigsaw extends Model {
 		if(this.image_uri.equals(""))
 			iv.setBackgroundResource(R.drawable.main_background_image);
 		else
-			iv.setImageBitmap(getScaledImageFromUri(Uri.parse(this.image_uri)));
+			iv.setImageBitmap(RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 8));
 		return v;
 	}
-	
-	private Bitmap getScaledImageFromUri(Uri uri){
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		//options.inTempStorage = new byte[16*512];
-		options.inSampleSize = 8;
-		Bitmap bitmapImage = BitmapFactory.decodeFile(getRealPathFromURI(uri), options);
-		return bitmapImage;
-	}
-	
-	public String getRealPathFromURI(Uri contentUri) {
-        String[] proj = { MediaStore.Images.Media.DATA };
-        Cursor cursor = ((Activity)context).managedQuery(contentUri, proj, null, null, null);
-        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        cursor.moveToFirst();
-        return cursor.getString(column_index);
-    }
 }
