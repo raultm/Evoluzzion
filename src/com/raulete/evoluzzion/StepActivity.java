@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.raulete.evoluzzion.models.Jigsaw;
@@ -57,4 +60,23 @@ public class StepActivity extends Activity {
 		jigsaw = new Jigsaw(this);
 		jigsaw.read(step.jigsaw_id);
 	}
+	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.step_menu, menu);
+        return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.menu_jigsaw_delete:
+        	new Step(this).delete(step_id);
+        	finish();
+        	return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
 }
