@@ -36,7 +36,7 @@
 		    android:layout_margin="3dip"
 		    android:padding="3dip"
 		    android:background="@color/background_box_color"
-		    android:visibility="invisible" />
+		    android:visibility="gone" />
 		<EditText 
 		    android:id="@+id/jigsaw_add_name"
 		    android:layout_width="fill_parent"
@@ -48,13 +48,15 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:hint="@string/jigsaw_add_pieces"
-		    android:layout_margin="15dip" />
+		    android:layout_margin="15dip"
+		    android:visibility="gone" />
 		<EditText 
 		    android:id="@+id/jigsaw_add_barcode"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:hint="@string/jigsaw_add_barcode"
-		    android:layout_margin="15dip" />
+		    android:layout_margin="15dip"
+		    android:visibility="gone" />
 		<Button 
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
