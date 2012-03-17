@@ -18,7 +18,6 @@
 	        android:layout_margin="10dip"
 	        android:layout_marginTop="100dip"
 	        android:src="@drawable/evoluzzion_logo_800"
-	        android:contentDescription="@string/logo_content_description"
-	        android:onClick="openJigsawsListActivity"/>
+	        android:contentDescription="@string/logo_content_description" />
     </LinearLayout>
 </LinearLayout>

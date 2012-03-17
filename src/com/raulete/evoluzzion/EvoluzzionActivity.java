@@ -12,7 +12,7 @@ public class EvoluzzionActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        new CountDownTimer(2000, 1000) {
+        new CountDownTimer(1500, 500) {
             public void onTick(long millisUntilFinished) { }
             public void onFinish() {
             	openJigsawsListActivity(null);
