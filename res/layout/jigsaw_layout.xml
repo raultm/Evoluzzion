@@ -5,15 +5,37 @@
     android:orientation="vertical"
     android:background="@drawable/list_background"
     android:gravity="center" >
-    
-	<ImageView 
-	    android:layout_gravity="left"
-	    android:layout_width="100dip"
-	    android:layout_height="50dip"
-	    android:layout_marginLeft="10dip"
-	    android:src="@drawable/evoluzzion_logo_800"
-	    android:contentDescription="@string/jigsawslist_title"
-	    />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@drawable/list_background">
+		<ImageView 
+		    android:layout_gravity="left"
+		    android:layout_width="100dip"
+		    android:layout_height="50dip"
+		    android:layout_marginLeft="10dip"
+		    android:src="@drawable/evoluzzion_logo_800"
+		    android:contentDescription="@string/jigsawslist_title"
+		    />
+		<Button
+		    android:id="@+id/jigsaw_delete"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/delete"
+		    android:layout_alignParentRight="true"
+		    android:layout_margin="10dip"
+		    android:textColor="@color/black"
+		    android:onClick="deleteJigsaw" />
+		<Button
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:text="@string/edit"
+		    android:layout_toLeftOf="@id/jigsaw_delete"
+		    android:layout_margin="10dip"
+		    android:textColor="@color/black"
+		    android:onClick="editJigsaw" />
+	</RelativeLayout>
 	<Button 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"

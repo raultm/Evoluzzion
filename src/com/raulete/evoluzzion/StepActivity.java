@@ -30,6 +30,10 @@ public class StepActivity extends Activity {
 		populateStep();
 	}
 	
+	public void deleteStep(View view){
+		deleteStepAndFinish();
+	}
+	
 	public void shareStep(View view){
 		Intent sharingIntent = new Intent(Intent.ACTION_SEND);
 		sharingIntent.setType("image/jpeg");
@@ -72,11 +76,15 @@ public class StepActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case R.id.menu_jigsaw_delete:
-        	new Step(this).delete(step_id);
-        	finish();
+        	deleteStepAndFinish();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
         }
     }
+	
+	public void deleteStepAndFinish(){
+		new Step(this).delete(step_id);
+    	finish();
+	}
 }

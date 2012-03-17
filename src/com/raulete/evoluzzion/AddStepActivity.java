@@ -1,12 +1,9 @@
 package com.raulete.evoluzzion;
 
-import java.io.File;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,8 +26,7 @@ public class AddStepActivity extends Activity {
     }
 	
 	public void launchCamera(View view){
-		Uri camera_uri = Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/evoluzzion/"));
-		RCameraUtil.launchCamera(this, camera_uri);
+		RCameraUtil.launchCamera(this);
 	}
 	
 	@Override
@@ -38,7 +34,7 @@ public class AddStepActivity extends Activity {
 		image_uri = RCameraUtil.getUriFromCameraResult(this, request, result, intent);
 		if(image_uri != null && !image_uri.equals("")){
 			ImageView image = (ImageView)findViewById(R.id.camera_image);
-			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri), 5));
+			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri), 20));
 		}
 	}
 	

@@ -8,17 +8,25 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.widget.Toast;
 
 public class RCameraUtil {
 
 	public static int CAMERA_RESULT = 200;
 	
-	public static void launchCamera(Activity activity, Uri uri){
+	public static File getFileToStoreCameraResult(){
+		String directoryPath = Environment.getExternalStorageDirectory() + "/data/com.raulete.evoluzzion/tmp/";
+		File directory = new File(directoryPath);
+		if(!directory.exists())
+			directory.mkdirs();
+		String filePath = directoryPath + "camera_capture";
+		File file = new File(filePath);
+		return file;
+	}
+	
+	public static void launchCamera(Activity activity){
 		Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		if(uri != null)
-			camera.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, uri);
+		camera.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, Uri.fromFile(getFileToStoreCameraResult()));
 		activity.startActivityForResult(camera, CAMERA_RESULT);
 	}
 	
@@ -36,11 +44,10 @@ public class RCameraUtil {
 	
 	private static String getStringUriFromCameraResult(Activity activity){
 		Uri uri = null;
-    	File file = new File(Environment.getExternalStorageDirectory() + "/evoluzzion/");
+    	File file = getFileToStoreCameraResult();
     	try {
     		uri = Uri.parse(android.provider.MediaStore.Images.Media.insertImage(activity.getContentResolver(), file.getAbsolutePath(), null, null));
-            if (!file.delete()) {	Log.i("logMarker", "Failed to delete " + file); }
-        } catch (FileNotFoundException e) { 
+    	} catch (FileNotFoundException e) { 
         	e.printStackTrace(); 
         }
         if(uri != null){

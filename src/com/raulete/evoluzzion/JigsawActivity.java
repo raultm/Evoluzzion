@@ -35,6 +35,14 @@ public class JigsawActivity extends Activity {
         populateSteps();
 	}
 	
+	public void editJigsaw(View view){
+		openEditJigsawActivity();
+	}
+	
+	public void deleteJigsaw(View view){
+		deleteJigsawAndFinish();
+	}
+	
 	public void addStep(View view){
 		Intent intent = new Intent(this, AddStepActivity.class);
 		intent.putExtra(AddStepActivity.JIGSAW_ID, jigsaw_id);
@@ -82,8 +90,7 @@ public class JigsawActivity extends Activity {
         	openEditJigsawActivity();
         	return true;
         case R.id.menu_jigsaw_delete:
-        	new Jigsaw(this).delete(jigsaw_id);
-        	finish();
+        	deleteJigsawAndFinish();
         	return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -94,6 +101,11 @@ public class JigsawActivity extends Activity {
 		Intent intent = new Intent(this, EditJigsawActivity.class);
 		intent.putExtra(EditJigsawActivity.JIGSAW_ID, jigsaw_id);
 		startActivity(intent);
+	}
+	
+	public void deleteJigsawAndFinish(){
+		new Jigsaw(this).delete(jigsaw_id);
+    	finish();
 	}
 	
 	class StepItemListener implements AdapterView.OnItemClickListener{
