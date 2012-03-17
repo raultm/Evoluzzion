@@ -36,7 +36,8 @@ public class AddJigsawActivity extends Activity {
 		image_uri = RCameraUtil.getUriFromCameraResult(this, request, result, intent);
 		if(image_uri != null && !image_uri.equals("")){
 			ImageView image = (ImageView)findViewById(R.id.camera_image);
-			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri), 5));
+			image.setVisibility(View.VISIBLE);
+			image.setImageBitmap(RImageUtil.getScaledImageFromUri(this, Uri.parse(this.image_uri), 20));
 		}
 	}
 
