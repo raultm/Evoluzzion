@@ -1,6 +1,8 @@
 package com.raulete.evoluzzion;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -31,7 +33,14 @@ public class StepActivity extends Activity {
 	}
 	
 	public void deleteStep(View view){
-		deleteStepAndFinish();
+		new AlertDialog.Builder(this)
+		.setTitle(R.string.step_delete)
+		.setMessage(R.string.sure)
+		.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() { 
+			public void onClick(DialogInterface dialog, int which) { StepActivity.this.deleteStepAndFinish(); }
+		})
+        .setNegativeButton(R.string.no, null)
+        .show();
 	}
 	
 	public void shareStep(View view){

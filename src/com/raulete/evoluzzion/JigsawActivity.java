@@ -3,7 +3,9 @@ package com.raulete.evoluzzion;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,7 +42,14 @@ public class JigsawActivity extends Activity {
 	}
 	
 	public void deleteJigsaw(View view){
-		deleteJigsawAndFinish();
+		new AlertDialog.Builder(this)
+			.setTitle(R.string.jigsaw_delete)
+			.setMessage(R.string.sure)
+			.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() { 
+				public void onClick(DialogInterface dialog, int which) { JigsawActivity.this.deleteJigsawAndFinish(); }
+			})
+	        .setNegativeButton(R.string.no, null)
+	        .show();
 	}
 	
 	public void addStep(View view){

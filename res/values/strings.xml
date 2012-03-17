@@ -21,11 +21,13 @@
     
     <string name="jigsaw_saved">Jigsaw saved</string>
     <string name="jigsaw_not_saved">Jigsaw could\'t be saved</string>
+    <string name="jigsaw_delete">Delete Jigsaw</string>
     
     <string name="steps">Steps</string>
     <string name="step_take_a_photo">Please, take a photo!</string>
     <string name="step_save">Step saved</string>
     <string name="step_not_saved">Step could\'t be saved</string>
+    <string name="step_delete">Delete Step</string>
     
     <string name="divider">Divider</string>
     
@@ -33,6 +35,7 @@
     
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
-    
-    
+    <string name="sure">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

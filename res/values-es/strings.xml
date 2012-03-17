@@ -21,11 +21,13 @@
     
     <string name="jigsaw_saved">Puzzle guardado</string>
     <string name="jigsaw_not_saved">No ha podido ser guardado</string>
+    <string name="jigsaw_delete">Borrar Puzzle</string>
     
     <string name="steps">Pasos</string>
     <string name="step_take_a_photo">Por favor, realiza una foto.</string>
     <string name="step_save">Paso guardado</string>
     <string name="step_not_saved">No ha podido ser guardado</string>
+    <string name="step_delete">Borrar Paso</string>
     
     <string name="divider">Divisor</string>
     
@@ -33,6 +35,8 @@
     
     <string name="delete">Borrar</string>
     <string name="edit">Editar</string>
-    
+    <string name="sure">¿Estás seguro?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
     
 </resources>
