@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Evoluzzion</string>
+    <string name="button_enter">Entrar</string>
+    <string name="button_add_jigsaw">Añadir Puzzle</string>
+    <string name="button_add_step">Añadir Paso</string>
+    <string name="button_launch_camera">Lanzar Cámara</string>
+    <string name="button_step_share">Compartir</string>
+    <string name="logo_content_description">Evoluzzion</string>
+    
+    <string name="jigsaws">Puzzles</string>
+    <string name="jigsawslist_title">Puzzles</string>
+    <string name="jigsaws_title">Titulo</string>
+    <string name="jigsaw_add_name">Nombre</string>
+    <string name="jigsaw_add_pieces">Piezas</string>
+    <string name="jigsaw_add_barcode">Código de Barras</string>
+    <string name="step_add_name">Nombre</string>
+    <string name="step_add_comment">Comentario</string>
+    <string name="jigsaw_image">Imagen</string>
+    
+    <string name="jigsaw_saved">Puzzle guardado</string>
+    <string name="jigsaw_not_saved">No ha podido ser guardado</string>
+    
+    <string name="steps">Pasos</string>
+    <string name="step_take_a_photo">Por favor, realiza una foto.</string>
+    <string name="step_save">Paso guardado</string>
+    <string name="step_not_saved">No ha podido ser guardado</string>
+    
+    <string name="divider">Divisor</string>
+    
+    <string name="camera_image">Imagen de la cámara</string>
+    
+    <string name="delete">Borrar</string>
+    <string name="edit">Editar</string>
+    
+    
+</resources>

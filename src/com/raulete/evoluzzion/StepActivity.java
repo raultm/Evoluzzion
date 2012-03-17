@@ -39,7 +39,8 @@ public class StepActivity extends Activity {
 		sharingIntent.setType("image/jpeg");
 		sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getStringToShare());
 		sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(step.image_uri));  
-		startActivity(Intent.createChooser(sharingIntent,"Share"));
+		String share = (String)getResources().getText(R.string.button_step_share);
+		startActivity(Intent.createChooser(sharingIntent, share));
 	}
 	
 	public String getStringToShare(){
