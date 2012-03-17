@@ -36,7 +36,7 @@
 		    android:layout_margin="3dip"
 		    android:padding="3dip"
 		    android:background="@color/background_box_color"
-		    android:visibility="invisible" />
+		    android:visibility="gone" />
 		<EditText 
 		    android:id="@+id/step_add_name"
 		    android:layout_width="fill_parent"
