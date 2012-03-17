@@ -1,68 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@drawable/list_background"
-    android:gravity="center|top" >
-    
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/list_background">
+	<LinearLayout 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical"
-	    android:background="@drawable/list_background">
-		<ImageView 
-		    android:layout_gravity="left"
-		    android:layout_width="100dip"
-		    android:layout_height="50dip"
-		    android:layout_marginLeft="10dip"
-		    android:src="@drawable/evoluzzion_logo_800"
-		    android:contentDescription="@string/jigsawslist_title"
-		    />
+	    android:gravity="center|top" >
+	    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="@drawable/list_background">
+			<ImageView 
+			    android:layout_gravity="left"
+			    android:layout_width="100dip"
+			    android:layout_height="50dip"
+			    android:layout_marginLeft="10dip"
+			    android:src="@drawable/evoluzzion_logo_800"
+			    android:contentDescription="@string/jigsawslist_title" />
+			<Button
+			    android:id="@+id/jigsaw_delete"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/delete"
+			    android:layout_alignParentRight="true"
+			    android:layout_margin="10dip"
+			    android:textColor="@color/black"
+			    android:onClick="deleteStep" />
+		</RelativeLayout>
 		<Button
-		    android:id="@+id/jigsaw_delete"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/button_step_share"
+		    android:onClick="shareStep" 
+		    android:background="@drawable/button_background"
+		    android:textColor="@color/button_font_color"
+		    android:textSize="20sp"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:layout_marginTop="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"/>
+		<TextView 
+		    android:id="@+id/jigsaw_name"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/jigsaws_title"
+		    android:background="@drawable/label_background"
+		    android:gravity="center"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:layout_marginTop="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"
+		   	android:textColor="@color/black" />
+		<TextView 
+		    android:id="@+id/step_name"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/step_add_name"
+		    android:background="@drawable/label_background"
+		    android:gravity="center"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:layout_marginTop="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"
+		    android:textColor="@color/black" />
+		<TextView 
+		    android:id="@+id/step_comment"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/step_add_comment"
+		    android:background="@drawable/label_background"
+		    android:paddingLeft="10dip"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:layout_marginTop="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"
+		    android:textColor="@color/black" />
+		<ImageView 
+		    android:id="@+id/step_image"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:text="@string/delete"
-		    android:layout_alignParentRight="true"
-		    android:layout_margin="10dip"
-		    android:textColor="@color/black"
-		    android:onClick="deleteStep" />
-	</RelativeLayout>
-	<Button
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:text="@string/button_step_share"
-	    android:onClick="shareStep" 
-	    android:background="@drawable/button_background"
-	    android:textColor="@color/button_font_color"
-	    android:textSize="20sp"
-	    android:layout_marginLeft="15dip"
-	    android:layout_marginRight="15dip"
-	    android:paddingBottom="10dip"
-	    android:paddingTop="10dip"/>
-	<TextView 
-	    android:id="@+id/jigsaw_name"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:text="@string/jigsaws_title"/>
-	
-	<TextView 
-	    android:id="@+id/step_name"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:text="@string/step_add_name"/>
-	<TextView 
-	    android:id="@+id/step_comment"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:text="@string/step_add_comment"/>
-	<ImageView 
-	    android:id="@+id/step_image"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:src="@drawable/ic_launcher"
-	    android:contentDescription="@string/jigsaw_image"
-	    android:scaleType="fitCenter"/>
-	
-</LinearLayout>
+		    android:src="@drawable/ic_launcher"
+		    android:contentDescription="@string/jigsaw_image"
+		    android:scaleType="fitStart"
+		    android:layout_margin="3dip"
+		    android:padding="3dip"
+		    android:background="@color/background_box_color" />
+	</LinearLayout>
+</ScrollView>

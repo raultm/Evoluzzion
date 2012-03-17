@@ -146,6 +146,6 @@ public class Step extends Model {
 		text.setText(this.comment);
 		
 		ImageView image = (ImageView)activity.findViewById(R.id.step_image);
-		image.setImageBitmap(RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 4));
+		image.setImageBitmap(RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 7));
 	}
 }
