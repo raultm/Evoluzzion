@@ -13,18 +13,19 @@
         <activity
             android:name=".EvoluzzionActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait" 
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".JigsawsListActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".JigsawActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".AddJigsawActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".EditJigsawActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".AddStepActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".StepActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".JigsawsListActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+        <activity android:name=".JigsawActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+        <activity android:name=".AddJigsawActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+        <activity android:name=".EditJigsawActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+        <activity android:name=".AddStepActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
+        <activity android:name=".StepActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
 
 </manifest>
