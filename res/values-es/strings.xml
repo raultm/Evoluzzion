@@ -30,6 +30,7 @@
     <string name="step_delete">Borrar Paso</string>
     
     <string name="divider">Divisor</string>
+    <string name="shadow_divider">Divisor con Sombra</string>
     
     <string name="camera_image">Imagen de la cámara</string>
     

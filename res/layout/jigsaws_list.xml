@@ -5,15 +5,37 @@
     android:orientation="vertical" 
     android:background="@drawable/list_background"
     android:gravity="center" >
-    
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:background="@drawable/list_background">
+		<ImageView 
+		    android:layout_gravity="left"
+		    android:layout_width="100dip"
+		    android:layout_height="50dip"
+		    android:layout_marginLeft="10dip"
+		    android:src="@drawable/evoluzzion_logo_800"
+		    android:contentDescription="@string/jigsawslist_title" />
+		<ImageView
+		    android:id="@+id/jigsaw_add"
+		    android:layout_width="40dip"
+		    android:layout_height="40dip"
+		    android:padding="5dip"
+		    android:layout_marginTop="3dip"
+		    android:layout_alignParentRight="true"
+		    android:background="@drawable/upper_menu_action_button"
+		    android:src="@drawable/icon_add"
+		    android:contentDescription="@string/button_add_jigsaw"
+		    android:onClick="addJigsaw" />
+	</RelativeLayout>
 	<ImageView 
-	    android:layout_gravity="left"
-	    android:layout_width="100dip"
-	    android:layout_height="50dip"
-	    android:layout_marginLeft="10dip"
-	    android:src="@drawable/evoluzzion_logo_800"
-	    android:contentDescription="@string/jigsawslist_title"
-	    />
+		    android:layout_width="fill_parent"
+		    android:layout_height="15dip"
+		    android:background="@drawable/shadow"
+		    android:contentDescription="@string/shadow_divider"
+			/>
+	<!-- 
 	<Button 
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
@@ -26,6 +48,7 @@
 	    android:layout_marginRight="15dip"
 	    android:paddingBottom="10dip"
 	    android:paddingTop="10dip" />
+	-->
 	<TextView 
 	    android:gravity="center"
 	    android:layout_width="fill_parent"
