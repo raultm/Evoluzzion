@@ -7,32 +7,42 @@
     android:gravity="center" >
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
+	    android:layout_height="49dip"
 	    android:orientation="vertical"
 	    android:background="@drawable/list_background">
 		<ImageView 
 		    android:layout_gravity="left"
 		    android:layout_width="100dip"
-		    android:layout_height="50dip"
+		    android:layout_height="fill_parent"
 		    android:layout_marginLeft="10dip"
 		    android:src="@drawable/evoluzzion_logo_800"
 		    android:contentDescription="@string/jigsawslist_title" />
-		<ImageView
-		    android:id="@+id/jigsaw_add"
-		    android:layout_width="40dip"
-		    android:layout_height="40dip"
-		    android:padding="5dip"
-		    android:layout_marginTop="3dip"
-		    android:layout_alignParentRight="true"
-		    android:background="@drawable/upper_menu_action_button"
-		    android:src="@drawable/icon_add"
-		    android:contentDescription="@string/button_add_jigsaw"
-		    android:onClick="addJigsaw" />
+		<LinearLayout 
+		    android:layout_width="wrap_content"
+		    android:layout_height="fill_parent"
+		    android:orientation="horizontal"
+		    android:layout_alignParentRight="true" >
+			<ImageView 
+			    android:layout_width="1dip"
+			    android:layout_height="fill_parent"
+			    android:contentDescription="@string/shadow_divider"
+			    android:background="#CCCCCC"
+		    />    
+		    <ImageView
+		    	android:id="@+id/jigsaw_add"
+		    	android:layout_width="49dip"
+		    	android:layout_height="fill_parent"
+		    	android:padding="15dip"
+		    	android:background="@drawable/upper_menu_action_button"
+		    	android:src="@drawable/icon_add"
+		    	android:contentDescription="@string/button_add_jigsaw"
+		    	android:onClick="addJigsaw" />
+		</LinearLayout>
 	</RelativeLayout>
 	<ImageView 
 		    android:layout_width="fill_parent"
 		    android:layout_height="15dip"
-		    android:background="@drawable/shadow"
+		    android:background="@drawable/head_shadow"
 		    android:contentDescription="@string/shadow_divider"
 			/>
 	<!-- 
