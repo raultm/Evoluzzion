@@ -8,13 +8,25 @@
 	    android:layout_height="wrap_content"
 	    android:orientation="vertical"
 	    android:gravity="center|top" >
-	    <ImageView 
-		    android:layout_gravity="left"
-		    android:layout_width="100dip"
-		    android:layout_height="50dip"
-		    android:layout_marginLeft="10dip"
-		    android:src="@drawable/evoluzzion_logo_800"
-		    android:contentDescription="@string/jigsawslist_title" />
+	    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="49dip"
+		    android:orientation="vertical"
+		    android:background="@drawable/list_background">
+			<ImageView 
+			    android:layout_gravity="left"
+			    android:layout_width="100dip"
+			    android:layout_height="fill_parent"
+			    android:layout_marginLeft="10dip"
+			    android:src="@drawable/evoluzzion_logo_800"
+			    android:contentDescription="@string/jigsawslist_title" />
+		</RelativeLayout>
+		<ImageView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="15dip"
+		    android:background="@drawable/head_shadow"
+		    android:contentDescription="@string/shadow_divider"
+			/>
 		<Button 
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
