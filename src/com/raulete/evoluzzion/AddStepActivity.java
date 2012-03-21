@@ -23,6 +23,7 @@ public class AddStepActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.step_add);
         setJigsawId();
+        launchCamera(null);
     }
 	
 	public void launchCamera(View view){
