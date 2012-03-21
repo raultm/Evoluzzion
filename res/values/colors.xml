@@ -8,14 +8,17 @@
     <color name="button_font_color">#FFFFFF</color>
     <color name="inner_list_font_color">#666666</color>
     <!-- Main colors -->
+    <color name="background_color">#eeeeee</color>
     <color name="main_color_1">#DD3673</color>
     <color name="main_color_2">#B30343</color>
+    <!-- Top-bar colors -->
+    <color name="shadow_divider">#CCCCCC</color>
     <!-- Background colors -->
     <color name="background_color_1">#DD3673</color>
     
-    <color name="background_gradient_1">#FFFFFF</color>
+    <color name="background_gradient_1">#fafafa</color>
     <color name="background_gradient_2">#EEEEEE</color>
-    <color name="background_gradient_3">#FFFFFF</color>
+    <color name="background_gradient_3">#dcdcdc</color>
     
     <color name="background_gradient_4">#CCCCCC</color>
     <color name="background_gradient_5">#EEEEEE</color>
