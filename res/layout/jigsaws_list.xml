@@ -50,7 +50,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:singleLine="true"
-	    android:textColor="@color/main_color_1"
+	    android:textColor="@color/main_color_3"
 	    android:layout_marginBottom="4dip"
 	    android:text="@string/jigsaws" />
 	<TextView 
@@ -58,13 +58,13 @@
 	    android:layout_width="80dip"
 	    android:layout_height="3dip"
 	    android:singleLine="true"
-	    android:background="@color/main_color_1"
+	    android:background="@color/main_color_3"
 	    android:text="@string/jigsaws"
 	    />
 	<TextView 
 	    android:layout_width="fill_parent"
 	    android:layout_height="1dip"
-	    android:background="@color/main_color_1"
+	    android:background="@color/main_color_3"
 	    android:layout_marginBottom="4dip"
 	    />
 	<ListView 

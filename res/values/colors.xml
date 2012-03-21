@@ -11,6 +11,7 @@
     <color name="background_color">#eeeeee</color>
     <color name="main_color_1">#DD3673</color>
     <color name="main_color_2">#B30343</color>
+    <color name="main_color_3">#ff005d</color>
     <!-- Top-bar colors -->
     <color name="shadow_divider">#CCCCCC</color>
     <!-- Background colors -->
