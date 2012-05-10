@@ -20,6 +20,27 @@
 			    android:layout_marginLeft="10dip"
 			    android:src="@drawable/evoluzzion_logo_800"
 			    android:contentDescription="@string/jigsawslist_title" />
+			<LinearLayout 
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="fill_parent"
+		    	android:orientation="horizontal"
+		    	android:layout_alignParentRight="true" >
+				<ImageView 
+			    	android:layout_width="1dip"
+			    	android:layout_height="fill_parent"
+			    	android:contentDescription="@string/shadow_divider"
+			    	android:background="@color/shadow_divider"
+		    	/>    
+		    	<ImageView
+		    		android:id="@+id/jigsaw_add"
+		    		android:layout_width="49dip"
+		    		android:layout_height="fill_parent"
+		    		android:padding="15dip"
+		    		android:background="@drawable/upper_menu_action_button"
+		    		android:src="@drawable/icon_camera"
+		    		android:contentDescription="@string/button_launch_camera"
+		    		android:onClick="launchCamera" />
+			</LinearLayout>
 		</RelativeLayout>
 		<ImageView 
 		    android:layout_width="fill_parent"
@@ -27,19 +48,28 @@
 		    android:background="@drawable/head_shadow"
 		    android:contentDescription="@string/shadow_divider"
 			/>
-	    <Button 
+		<TextView 
+		    android:gravity="center"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
-		    android:text="@string/button_launch_camera"
-		    android:onClick="launchCamera"
-		    android:background="@drawable/button_background"
-		    android:textSize="20sp"
-		    android:textColor="@color/button_font_color"
-		    android:layout_marginLeft="15dip"
-		    android:layout_marginRight="15dip"
-		    android:paddingBottom="10dip"
-		    android:paddingTop="10dip" />
-		<ImageView
+		    android:singleLine="true"
+		    android:textColor="@color/main_color_3"
+		    android:layout_marginBottom="4dip"
+		    android:text="@string/jigsaw_add_title" />
+		<TextView 
+		    android:gravity="center"
+		    android:layout_width="80dip"
+		    android:layout_height="3dip"
+		    android:singleLine="true"
+		    android:background="@color/main_color_3"
+		    />
+		<TextView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="1dip"
+		    android:background="@color/main_color_3"
+		    android:layout_marginBottom="4dip"
+		    />
+	    <ImageView
 		    android:id="@+id/camera_image"
 		    android:layout_height="wrap_content"
 		    android:layout_width="wrap_content"

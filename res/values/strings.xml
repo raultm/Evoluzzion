@@ -12,9 +12,11 @@
     <string name="jigsaws">Jigsaws</string>
     <string name="jigsawslist_title">Jigsaw Puzzles</string>
     <string name="jigsaws_title">Jigsaw Title</string>
+    <string name="jigsaw_add_title">Add Jigsaw Puzzle</string>
     <string name="jigsaw_add_name">Name</string>
     <string name="jigsaw_add_pieces">Pieces</string>
     <string name="jigsaw_add_barcode">Barcode</string>
+    <string name="step_add_title">Add Step</string>
     <string name="step_add_name">Name</string>
     <string name="step_add_comment">Comment</string>
     <string name="jigsaw_image">Jigsaw Image</string>
