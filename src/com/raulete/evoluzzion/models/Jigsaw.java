@@ -13,10 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.raulete.evoluzzion.R;
-import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.evoluzzion.models.interfaces.Model;
 import com.raulete.utils.RImageUtil;
 
-public class Jigsaw extends Model {
+public class Jigsaw extends SQLiteModel {
 
 	public static String TABLE_NAME = "jigsaws";
 	
@@ -61,12 +61,12 @@ public class Jigsaw extends Model {
 		return cv;
 	}
 	
-	public List<DatabaseModel> cursor2ListOptions(Cursor cursor){
-		ArrayList<DatabaseModel> list = new ArrayList<DatabaseModel>();
+	public List<Model> cursor2ListOptions(Cursor cursor){
+		ArrayList<Model> list = new ArrayList<Model>();
 		if (cursor.getCount() > 0){
 			cursor.moveToFirst();
 			while (!cursor.isAfterLast()){
-				DatabaseModel jigsaw = new Jigsaw(this.context);
+				Model jigsaw = new Jigsaw(this.context);
 				jigsaw.parseCursor(cursor);
 				list.add(jigsaw);
 				cursor.moveToNext();

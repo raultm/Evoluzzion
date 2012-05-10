@@ -15,7 +15,7 @@ import android.widget.ListView;
 import com.raulete.evoluzzion.models.Jigsaw;
 import com.raulete.evoluzzion.models.Step;
 import com.raulete.evoluzzion.models.adapters.LayoutArrayAdapter;
-import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.evoluzzion.models.interfaces.Model;
 
 public class JigsawActivity extends Activity {
 
@@ -64,7 +64,7 @@ public class JigsawActivity extends Activity {
 		steps.setOnItemClickListener(new StepItemListener(this));
 	}
 	
-	private List<DatabaseModel> getSteps(){
+	private List<Model> getSteps(){
   		return new Step(this).find(
   				  " SELECT * FROM steps "
   				+ " WHERE steps.jigsaw_id=" + jigsaw_id 

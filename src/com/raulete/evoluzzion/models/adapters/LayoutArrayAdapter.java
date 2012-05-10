@@ -8,27 +8,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.evoluzzion.models.interfaces.Model;
 
-public class LayoutArrayAdapter extends ArrayAdapter<DatabaseModel>{
+public class LayoutArrayAdapter extends ArrayAdapter<Model>{
 
 	private Context context;
-	private List<DatabaseModel> items;
+	private List<Model> items;
 	private int layoutToInflate;
 
-	public LayoutArrayAdapter(Context context, int layoutToInflate, List<DatabaseModel> list){
+	public LayoutArrayAdapter(Context context, int layoutToInflate, List<Model> list){
 		super(context, layoutToInflate, list);
 		this.context = context;
 		this.layoutToInflate = layoutToInflate;
 		this.items = list;
 	}
 
-	public DatabaseModel getItem(int index){
-		return (DatabaseModel)this.items.get(index);
+	public Model getItem(int index){
+		return (Model)this.items.get(index);
 	}
 
 	public long getItemId(int index){
-		return ((DatabaseModel)getItem(index)).getId();
+		return ((Model)getItem(index)).getId();
 	}
 
 	public View getView(int index, View view, ViewGroup viewGroup){
@@ -36,7 +36,7 @@ public class LayoutArrayAdapter extends ArrayAdapter<DatabaseModel>{
 			view = ((LayoutInflater)this.context
 					.getSystemService("layout_inflater"))
 					.inflate(this.layoutToInflate, null);
-		DatabaseModel model = (DatabaseModel)this.items.get(index);
+		Model model = (Model)this.items.get(index);
   	  	if (model != null){
   	  		model.populateListItem(view);
   		}

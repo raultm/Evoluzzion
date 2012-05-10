@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import com.raulete.evoluzzion.models.Jigsaw;
 import com.raulete.evoluzzion.models.adapters.LayoutArrayAdapter;
-import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.evoluzzion.models.interfaces.Model;
 
 public class JigsawsListActivity extends Activity {
 
@@ -35,7 +35,7 @@ public class JigsawsListActivity extends Activity {
 		jigsaws.setOnItemClickListener(new JigsawItemListener(this));
 	}
 	
-	private List<DatabaseModel> getJigsaws(){
+	private List<Model> getJigsaws(){
   		return new Jigsaw(this).find("SELECT * FROM jigsaws ORDER BY jigsaws._id DESC");
   	}
 	

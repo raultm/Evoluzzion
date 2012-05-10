@@ -6,11 +6,11 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.view.View;
 
-public abstract interface DatabaseModel
+public abstract interface Model
 {
-  public abstract List<DatabaseModel> cursor2ListOptions(Cursor paramCursor);
+  public abstract List<Model> cursor2ListOptions(Cursor paramCursor);
 
-  public abstract List<DatabaseModel> find(String paramString);
+  public abstract List<Model> find(String paramString);
 
   public abstract String getIdField();
 
@@ -20,7 +20,7 @@ public abstract interface DatabaseModel
 
   public abstract void parseCursor(Cursor paramCursor);
 
-  public abstract DatabaseModel read(long paramLong);
+  public abstract Model read(long paramLong);
 
   public abstract boolean save();
   

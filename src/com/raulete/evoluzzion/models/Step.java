@@ -16,10 +16,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.raulete.evoluzzion.R;
-import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.evoluzzion.models.interfaces.Model;
 import com.raulete.utils.RImageUtil;
 
-public class Step extends Model {
+public class Step extends SQLiteModel {
 
 	public static String TABLE_NAME = "steps";
 	
@@ -71,12 +71,12 @@ public class Step extends Model {
 		return cv;
 	}
 	
-	public List<DatabaseModel> cursor2ListOptions(Cursor cursor){
-		ArrayList<DatabaseModel> list = new ArrayList<DatabaseModel>();
+	public List<Model> cursor2ListOptions(Cursor cursor){
+		ArrayList<Model> list = new ArrayList<Model>();
 		if (cursor.getCount() > 0){
 			cursor.moveToFirst();
 			while (!cursor.isAfterLast()){
-				DatabaseModel jigsaw = new Step(this.context);
+				Model jigsaw = new Step(this.context);
 				jigsaw.parseCursor(cursor);
 				list.add(jigsaw);
 				cursor.moveToNext();

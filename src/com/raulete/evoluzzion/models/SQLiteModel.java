@@ -12,9 +12,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.raulete.evoluzzion.db.DatabaseHelper;
-import com.raulete.evoluzzion.models.interfaces.DatabaseModel;
+import com.raulete.evoluzzion.models.interfaces.Model;
 
-public class Model implements DatabaseModel{
+public class SQLiteModel implements Model{
   
 	public static String FIELD_ID = "_id";
 	public String TAG = "Evoluzzion";
@@ -23,9 +23,9 @@ public class Model implements DatabaseModel{
 	long _id;
 	DatabaseHelper mDbHelper;
 
-	public Model(){}
+	public SQLiteModel(){}
 
-	public Model(Context paramContext){ this.context = paramContext; }
+	public SQLiteModel(Context paramContext){ this.context = paramContext; }
 
 	public void setContext(Context paramContext){
 		this.context = paramContext;
@@ -40,13 +40,13 @@ public class Model implements DatabaseModel{
 		}
 	}
 
-	public List<DatabaseModel> cursor2ListOptions(Cursor paramCursor){
+	public List<Model> cursor2ListOptions(Cursor paramCursor){
 		return null;
 	}
 
-	public List<DatabaseModel> find(String paramString){
+	public List<Model> find(String paramString){
 		this.mDbHelper = new DatabaseHelper(this.context);
-		List<DatabaseModel> localList = null;
+		List<Model> localList = null;
 		try{
 			Cursor localCursor = this.mDbHelper.getReadableDatabase().rawQuery(paramString, null);
 			localList = cursor2ListOptions(localCursor);
@@ -57,7 +57,7 @@ public class Model implements DatabaseModel{
 		return localList;
 	}
 
-	public List<DatabaseModel> findAll(){
+	public List<Model> findAll(){
 		return find("SELECT * FROM " + getTableName());
 	}	
 
@@ -78,7 +78,7 @@ public class Model implements DatabaseModel{
 	}
 	
 	public String getIdField(){
-		return Model.FIELD_ID;
+		return SQLiteModel.FIELD_ID;
 	}
 
 	public String getSelectSQL(long paramLong){
@@ -110,7 +110,7 @@ public class Model implements DatabaseModel{
 		return l2;
 	}
 
-	public DatabaseModel read(long paramLong){
+	public Model read(long paramLong){
 		this.mDbHelper = new DatabaseHelper(this.context);
 		try{
 			Cursor localCursor = this.mDbHelper.getReadableDatabase().rawQuery(getSqlWithCondition(getIdField(), paramLong), null);
