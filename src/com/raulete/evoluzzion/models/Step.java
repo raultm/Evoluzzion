@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
@@ -128,8 +129,11 @@ public class Step extends Model {
 		ImageView iv = (ImageView)v.findViewById(R.id.step_image);
 		if(this.image_uri.equals(""))
 			iv.setBackgroundResource(R.drawable.main_background_image);
-		else
-			iv.setImageBitmap(RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 8));
+		else{
+			Bitmap imageFromURI = RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 8);
+			if(imageFromURI != null)
+				iv.setImageBitmap(imageFromURI);
+		}
 		return v;
 	}
 	
