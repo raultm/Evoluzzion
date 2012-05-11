@@ -149,7 +149,8 @@ public class Step extends SQLiteModel {
 		text = (TextView)activity.findViewById(R.id.step_comment);
 		text.setText(this.comment);
 		
-		ImageView image = (ImageView)activity.findViewById(R.id.step_image);
-		image.setImageBitmap(RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 7));
+		ImageView imageHolder = (ImageView)activity.findViewById(R.id.step_image);
+		Bitmap image = RImageUtil.getScaledImageFromUri((Activity)context, Uri.parse(this.image_uri), 2);
+		imageHolder.setImageBitmap(image);
 	}
 }

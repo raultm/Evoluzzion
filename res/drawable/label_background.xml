@@ -5,6 +5,5 @@
         android:endColor="@color/background_box_color"
         android:angle="270"
      />
-    <corners 
-        android:radius="10dip"/>
+    <!-- <corners android:radius="10dip"/> -->
 </shape>

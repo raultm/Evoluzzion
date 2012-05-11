@@ -24,7 +24,11 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:textColor="@color/inner_list_font_color"
-	        android:textSize="18sp"/>
+	        android:textSize="18sp"
+	        android:layout_marginTop="60dip"
+	        android:layout_marginRight="10dip"
+	       	android:gravity="center"
+	       	/>
 	    <TextView 
 	        android:id="@+id/jigsaw_pieces"
 	        android:layout_width="fill_parent"

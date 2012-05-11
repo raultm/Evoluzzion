@@ -26,6 +26,7 @@
     <string name="jigsaw_delete">Delete Jigsaw</string>
     
     <string name="steps">Steps</string>
+    <string name="step">Step</string>
     <string name="step_take_a_photo">Please, take a photo!</string>
     <string name="step_save">Step saved</string>
     <string name="step_not_saved">Step could\'t be saved</string>

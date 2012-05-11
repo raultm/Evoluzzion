@@ -62,47 +62,29 @@
 		    android:contentDescription="@string/shadow_divider"
 			/>
 		<TextView 
-		    android:id="@+id/jigsaw_name"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:text="@string/jigsaws_title"
-		    android:background="@drawable/label_background"
 		    android:gravity="center"
-		    android:layout_marginLeft="15dip"
-		    android:layout_marginRight="15dip"
-		    android:layout_marginTop="15dip"
-		    android:paddingBottom="10dip"
-		    android:paddingTop="10dip"
-		   	android:textColor="@color/black" />
-		<TextView 
-		    android:id="@+id/step_name"
 		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
-		    android:text="@string/step_add_name"
-		    android:background="@drawable/label_background"
+		    android:singleLine="true"
+		    android:textColor="@color/main_color_3"
+		    android:layout_marginBottom="4dip"
+		    android:text="@string/step" />
+		<TextView 
 		    android:gravity="center"
-		    android:layout_marginLeft="15dip"
-		    android:layout_marginRight="15dip"
-		    android:layout_marginTop="15dip"
-		    android:paddingBottom="10dip"
-		    android:paddingTop="10dip"
-		    android:textColor="@color/black" />
+		    android:layout_width="80dip"
+		    android:layout_height="3dip"
+		    android:singleLine="true"
+		    android:background="@color/main_color_3"
+		    />
 		<TextView 
-		    android:id="@+id/step_comment"
 		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:text="@string/step_add_comment"
-		    android:background="@drawable/label_background"
-		    android:paddingLeft="10dip"
-		    android:layout_marginLeft="15dip"
-		    android:layout_marginRight="15dip"
-		    android:layout_marginTop="15dip"
-		    android:paddingBottom="10dip"
-		    android:paddingTop="10dip"
-		    android:textColor="@color/black" />
-		<ImageView 
+		    android:layout_height="1dip"
+		    android:background="@color/main_color_3"
+		    android:layout_marginBottom="4dip"
+		    />
+		<com.raulete.utils.StepImageView 
 		    android:id="@+id/step_image"
-		    android:layout_width="wrap_content"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:src="@drawable/ic_launcher"
 		    android:contentDescription="@string/jigsaw_image"
@@ -110,5 +92,54 @@
 		    android:layout_margin="3dip"
 		    android:padding="3dip"
 		    android:background="@color/background_box_color" />
+		<TextView 
+		    android:layout_marginTop="10dip"
+		    android:layout_width="fill_parent"
+		    android:layout_height="1dip"
+		    android:background="@color/gray"
+		    />
+		<TextView 
+		    android:id="@+id/jigsaw_name"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/jigsaws_title"
+		    android:gravity="center"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"
+		   	android:textColor="@color/black" />
+		<TextView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="1dip"
+		    android:background="@color/gray"
+		    />
+		<TextView 
+		    android:id="@+id/step_name"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/step_add_name"
+		    android:gravity="center"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"
+		    android:textColor="@color/black" />
+		<TextView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="1dip"
+		    android:background="@color/gray"
+		    />
+		<TextView 
+		    android:id="@+id/step_comment"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:text="@string/step_add_comment"
+		    android:paddingLeft="10dip"
+		    android:layout_marginLeft="15dip"
+		    android:layout_marginRight="15dip"
+		    android:paddingBottom="10dip"
+		    android:paddingTop="10dip"
+		    android:textColor="@color/black" />
 	</LinearLayout>
 </ScrollView>
